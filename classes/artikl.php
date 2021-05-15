@@ -7,7 +7,7 @@
         public $sArtikl_JedMj;
         public $dArtikl_Cijena;
         public $nArtikl_KategorijaId;
-        public $sArtikl_URL
+        public $sArtikl_URL;
 
         // constructor
 
