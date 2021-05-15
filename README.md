@@ -1,5 +1,5 @@
 # Skladiste
-** NAPOMENA - Kako bi projekt funkcionirao prethodno trebate napraviti bazu sa nazivom "skladiste" i korisničko ime je "root" a lozinka je prazno polje "". ** 
+** NAPOMENA - Kako bi projekt funkcionirao prethodno trebate napraviti bazu sa nazivom "skladiste" i korisničko ime je "root" a lozinka je prazno polje "". 
 
 Konstrukcijska vježba iz kolegija Web programiranje na strani poslužitelja i kolegija Skriptni programski jezici
 
