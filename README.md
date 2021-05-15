@@ -1,5 +1,5 @@
 # Skladiste
-Konstrukcijska vježba iz kolegija Programiranje na strani Web Poslužitelja i kolegija Skriptni programski jezici
+Konstrukcijska vježba iz kolegija Web programiranje na strani poslužitelja i kolegija Skriptni programski jezici
 
 ZADATAK:
 
