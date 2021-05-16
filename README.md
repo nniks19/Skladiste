@@ -25,7 +25,7 @@ Informacijski sustav mora imati slijedeće funkcionalnosti:
 
 3 - Nova primka – potrebno je odabrati listu artikala nakon čega se popuni sadržaj dokumenta
 
-3 – Pregled dokumenata – dodati mogućnost brisanja dokumenata, stanje se mora ažurirati automatski.
+4 – Pregled dokumenata – dodati mogućnost brisanja dokumenata, stanje se mora ažurirati automatski.
 
 Do sad napravljeno:
 
