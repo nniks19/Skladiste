@@ -1,7 +1,7 @@
 <?php
 	class Artikl
 	{
-	public $sArtikl_Sifra;
+		public $sArtikl_Sifra;
         public $sArtikl_Naziv;
         public $sArtikl_Opis;
         public $sArtikl_JedMj;
@@ -19,14 +19,14 @@
             $this->dArtikl_Cijena = $dArtikl_Cijena;
             $this->nArtikl_KategorijaId = $nArtikl_KategorijaId;
             $this->sArtikl_URL = $sArtikl_URL;
-	} 
+		} 
 
-	// destructor
+		// destructor
 
-	public function __destruct()
-	{
-	}
-		
+		public function __destruct()
+		{
+		}
+        
 	}
     
 ?>

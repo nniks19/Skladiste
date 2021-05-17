@@ -10,7 +10,7 @@
         public function __construct($sSifraDokumenta, $sTipDokumenta, $dDatumDokumenta, $dIznos, $dIznosUlaz, $dIznosIzlaz){
 			$this->dIznosUlaz =  0;
 			$this->dIznosIzlaz = $dIznosIzlaz;
-			parent::__construct($sSifraDokumenta, $sTipDokumenta, $dDatumDokumenta, $nKolicina);
+			parent::__construct($sSifraDokumenta, $sTipDokumenta, $dDatumDokumenta, $dIznos);
 		} 
 
 		// getters
