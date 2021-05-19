@@ -63,3 +63,5 @@ Datum dokumenta – automatski:
 Iznos ulaz - (ukupno prema artiklima):
 Iznos izlaz - 0:
 
+
+Nažalost dohvaćanje podataka za ispis ne smijem raditi preko RAW SQL-a, već to moram napraviti koristeći klase i objekte. (naputak mentora)
