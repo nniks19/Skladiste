@@ -27,14 +27,6 @@ Informacijski sustav mora imati slijedeće funkcionalnosti:
 
 4 – Pregled dokumenata – dodati mogućnost brisanja dokumenata, stanje se mora ažurirati automatski.
 
-Do sad napravljeno:
-
-sqlrebuild.php - funkcionalnost je ta da se unutar baze "osvježe" tablice Kategorija, Dokument, Artikl, Artikl_Dokument
-
-connection.php - funkcionalnost je povezivanje sa bazom
-
-Hijerarhija klasa Dokument -> Izdatnica, Primka
-
 Klasa Artikl
 
 
@@ -45,11 +37,6 @@ Backup - spremanje podataka u .txt datoteku koja će sadržavati komandu za rekr
 Login - Zasebna baza koja će sadržavati Tablicu sa podacima: Korisničko_Ime, Lozinka, Tajni_Kljuc || Dodati sustav za hash lozinke (zbog sigurnosti)
 
 Zaboravili ste lozinku? - Korisnik će moći vratiti svoju lozinku putem tajnog ključa kojeg je upisao prilikom registracije.
-
-Dummy podaci - Pronaci izvor podataka iz kojega će se iznova svaki puta rekreirati baza.
-
-SQL naredba za dohvaćanje podataka u obliku tablice:
-Šifra artikla | Naziv artikla | JMJ | Cijena | Količina ulaz () | Iznos ulaz () | Količina izlaz () | Iznos izlaz () | Stanje količina | Stanje cijena
 
 SQL naredba za insert podataka u bazu preko forme - IZDATNICA (natuknica: koristit ću POST, a ne GET):
 Tip dokumenta – IZD (izdatnica):
