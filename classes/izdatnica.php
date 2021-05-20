@@ -1,26 +1,17 @@
 <?php
-	include 'dokument.php';
+	include_once 'dokument.php';
 	class Izdatnica extends Dokument
 	{
-		private $dIznosUlaz = 0;
-		private $dIznosIzlaz;
+		public $dIznosUlaz = 0;
+		public $dIznosIzlaz;
 
 		// constructor
 
-        public function __construct($sSifraDokumenta, $sTipDokumenta, $dDatumDokumenta, $dIznos, $dIznosUlaz, $dIznosIzlaz){
+        public function __construct($sSifraDokumenta, $sTipDokumenta, $dDatumDokumenta, $dIznos, $nKolicina, $dIznosUlaz, $dIznosIzlaz){
 			$this->dIznosUlaz =  0;
 			$this->dIznosIzlaz = $dIznosIzlaz;
-			parent::__construct($sSifraDokumenta, $sTipDokumenta, $dDatumDokumenta, $dIznos);
+			parent::__construct($sSifraDokumenta, $sTipDokumenta, $dDatumDokumenta, $dIznos, $nKolicina);
 		} 
-
-		// getters
-
-		public function getIznosUlaz(){
-			return $this->dIznosUlaz
-		}
-		public function getIznosIzlaz(){
-			return $this->dIznosIzlaz;
-		}
 
 		// setters
 

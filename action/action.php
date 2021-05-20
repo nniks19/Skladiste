@@ -7,9 +7,9 @@ if (isset($_GET['action_id'])) {
 	$sQuery = $_GET['action_id'];
 	switch($sQuery)
     {
-        case 'get_warehouse_inventory':
-        include 'getinventory.php';
-        getWarehouseData($oConnection);
+        case 'get_artikli':
+        include 'get_artikli.php';
+        getArtikli($oConnection);
         break;
         case 'insert_izdatnica':
         include 'insert_izdatnica.php';

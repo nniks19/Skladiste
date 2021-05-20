@@ -12,7 +12,7 @@
         // constructor
 
         public function __construct($sArtikl_Sifra, $sArtikl_Naziv, $sArtikl_Opis, $sArtikl_JedMj, $dArtikl_Cijena, $nArtikl_KategorijaId, $sArtikl_URL){
-            $this->sArtikl_Sfira = $sArtikl_Sifra;
+            $this->sArtikl_Sifra = $sArtikl_Sifra;
             $this->sArtikl_Naziv = $sArtikl_Naziv;
             $this->sArtikl_Opis = $sArtikl_Opis;
             $this->sArtikl_JedMj = $sArtikl_JedMj;

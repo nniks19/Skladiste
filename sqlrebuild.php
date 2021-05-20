@@ -1,5 +1,6 @@
 <?php
 include 'connection.php';
+$hashed_password = password_hash('test', PASSWORD_DEFAULT);
 $sqlCommand = "
 CREATE TABLE Kategorija (
     Kategorija_Id INT AUTO_INCREMENT,
@@ -31,6 +32,14 @@ CREATE TABLE Artikl_Dokument (
     CONSTRAINT FK_Artikl FOREIGN KEY(Artikl_Sifra) REFERENCES Artikl(Sifra),
     CONSTRAINT FK_Dokument FOREIGN KEY(Dok_Sifra) REFERENCES Dokument(Dok_Sifra)
 );
+CREATE TABLE Korisnici (
+    id int(11) NOT NULL AUTO_INCREMENT,
+    korisnicko_ime varchar(50) NOT NULL,
+    lozinka varchar(255) NOT NULL,
+    email varchar (100) NOT NULL,
+    CONSTRAINT PK_Korisnici PRIMARY KEY (id)
+);
+INSERT INTO Korisnici (korisnicko_ime, lozinka, email) VALUES ('test', '$hashed_password' , 'test@test.com');
 INSERT INTO Kategorija (Kategorija_Naziv) VALUES ('BETONSKI I PROTUPOTRESNI BLOKOVI');
 INSERT INTO Kategorija (Kategorija_Naziv) VALUES ('BITUMENSKE LJEPENKE ZA HIDROIZOLACIJU');
 INSERT INTO Kategorija (Kategorija_Naziv) VALUES('CEMENT I VAPNO');
@@ -148,7 +157,6 @@ INSERT INTO Dokument (Dok_Sifra, Dok_Tip, Dok_Datum) VALUES ('2021-5', 'PRM', '2
 INSERT INTO Artikl_Dokument (Dok_Sifra, Artikl_Sifra, Kolicina, Iznos) VALUES ('2021-5', 'AR4', 18579, (SELECT Cijena from artikl WHERE Sifra = 'AR4') * 18579);
 INSERT INTO Dokument (Dok_Sifra, Dok_Tip, Dok_Datum) VALUES ('2021-6', 'IZD', '2021-05-17 14:03:25');
 INSERT INTO Artikl_Dokument (Dok_Sifra, Artikl_Sifra, Kolicina, Iznos) VALUES ('2021-6', 'AR18', 1000, (SELECT Cijena from Artikl where Sifra='AR18')* 1000);
-
     ";
 function recursiveFunction($oConnection, $sqlCommand){
 try{
@@ -158,6 +166,7 @@ try{
     if ($e->getcode() == "42S01"){
         $sqlCommand2 = "
             SET FOREIGN_KEY_CHECKS = 0;
+            DROP TABLE IF EXISTS Korisnici;
             DROP TABLE IF EXISTS Kategorija;
             DROP TABLE IF EXISTS Dokument;
             DROP TABLE IF EXISTS Artikl;

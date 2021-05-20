@@ -1,35 +1,21 @@
 <?php
 	class Dokument
 	{
-		private $sSifraDokumenta;
-		private $sTipDokumenta;
-        private $dDatumDokumenta;
-        private $dIznos;
-		private $nKolicina;
+		public $sSifraDokumenta;
+		public $sTipDokumenta;
+        public $dDatumDokumenta;
+        public $dIznos;
+		public $nKolicina;
 
 		// constructor
 
-        public function __construct($sSifraDokumenta, $sTipDokumenta, $dDatumDokumenta, $dIznos){
+        public function __construct($sSifraDokumenta, $sTipDokumenta, $dDatumDokumenta, $dIznos, $nKolicina){
 			$this->sSifraDokumenta = $sSifraDokumenta;
-			$this->nTipDokumenta =  $sTipDokumenta;
+			$this->sTipDokumenta =  $sTipDokumenta;
 			$this->dDatumDokumenta = $dDatumDokumenta;
 			$this->dIznos = $dIznos;
+			$this->nKolicina = $nKolicina;
 		} 
-
-		// getters
-
-		public function getSifraDokumenta(){
-			return $this->sSifraDokumenta;
-		}
-		public function getTipDokumenta(){
-			return $this->sTipDokumenta;
-		}
-		public function getDatumDokumenta(){
-			return $this->nDatumDokumenta;
-		}
-		public function getIznos(){
-			return $this->dIznos;
-		}
 
 		// setters
 

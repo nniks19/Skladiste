@@ -1,26 +1,17 @@
 <?php
-	include 'dokument.php';
+	include_once 'dokument.php';
 	class Primka extends Dokument
 	{
-		private $dIznosUlaz;
-		private $dIznosIzlaz=0;
+		public $dIznosUlaz;
+		public $dIznosIzlaz=0;
 
 		// constructor
 
-        public function __construct($sSifraDokumenta, $sTipDokumenta, $dDatumDokumenta, $dIznos, $dIznosUlaz, $dIznosIzlaz){
+        public function __construct($sSifraDokumenta, $sTipDokumenta, $dDatumDokumenta, $dIznos, $nKolicina, $dIznosUlaz, $dIznosIzlaz){
 			$this->dIznosUlaz =  $dIznosUlaz;
 			$this->dIznosIzlaz = 0;
-			parent::__construct($sSifraDokumenta, $sTipDokumenta, $dDatumDokumenta, $dIznos);
+			parent::__construct($sSifraDokumenta, $sTipDokumenta, $dDatumDokumenta, $dIznos, $nKolicina);
 		} 
-
-		// getters
-
-		public function getIznosUlaz(){
-			return $this->dIznosUlaz
-		}
-		public function getIznosIzlaz(){
-			return $this->dIznosIzlaz;
-		}
 
 		// setters
 

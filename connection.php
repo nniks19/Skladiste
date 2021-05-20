@@ -1,4 +1,5 @@
 <?php
+session_start();
 	include 'classes/configuration.php';
 	$oConfig = new Configuration();
 try
