@@ -36,10 +36,15 @@ CREATE TABLE Korisnici (
     id int(11) NOT NULL AUTO_INCREMENT,
     korisnicko_ime varchar(50) NOT NULL,
     lozinka varchar(255) NOT NULL,
-    email varchar (100) NOT NULL,
+    email varchar(100) NOT NULL,
+    ime varchar(255),
+    prezime varchar(255),
+    drzava varchar(255),
+    grad varchar(255),
+    broj_mobitela varchar(255),
     CONSTRAINT PK_Korisnici PRIMARY KEY (id)
 );
-INSERT INTO Korisnici (korisnicko_ime, lozinka, email) VALUES ('test', '$hashed_password' , 'test@test.com');
+INSERT INTO Korisnici (korisnicko_ime, lozinka, email, ime, prezime, drzava, grad, broj_mobitela) VALUES ('test', '$hashed_password' , 'test@test.com', 'Nikola', 'Stjepanović', 'Hrvatska', 'Suhopolje', '+385993518898');
 INSERT INTO Kategorija (Kategorija_Naziv) VALUES ('BETONSKI I PROTUPOTRESNI BLOKOVI');
 INSERT INTO Kategorija (Kategorija_Naziv) VALUES ('BITUMENSKE LJEPENKE ZA HIDROIZOLACIJU');
 INSERT INTO Kategorija (Kategorija_Naziv) VALUES('CEMENT I VAPNO');

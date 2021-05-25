@@ -15,3 +15,15 @@
 <script src="js/app.js"></script>
 </body>
 </html>
+<?php
+session_start();
+if (isset($_SESSION['id'])) {
+	header('Location: administration/dashboard.php');
+	exit;
+} else {
+    if (isset($_SESSION['error'])){
+        echo '<script>alert("'.$_SESSION['error'].'")</script>';
+        session_destroy();
+    }
+}
+?>
