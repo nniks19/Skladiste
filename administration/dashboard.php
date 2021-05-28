@@ -23,23 +23,21 @@ include '../action/checklogin.php';
             <hr>
         </div>
         <div class="row">
-            <div class="col text-center border-end">
-                <h4><br>Ukupan broj artikala:  <!-- Count preko SQL-a koliko ima artikala u bazi --></h4>
-                <h4><br>Ukupan broj dokumenata:  <!-- Count preko SQL-a koliko ima dokumenata u bazi --></h4>
-                <h4><br>Ukupan broj izdatnica:  <!-- Count preko SQL-a koliko ima izdatnica u bazi --></h4>
-                <h4><br>Ukupan broj primki:  <!-- Count preko SQL-a koliko ima primka u bazi --></h4>
-                <h4><br>Ukupna količina artikala:  <!-- Count * Stanje koliko ih ima --></h4>
-                <h4><br>Cijena artikala:  <!-- zbrojih svih (cijena pojedinog artikla * koliko ga ima)  --></h4>
-                <h4><br>Cijena najskupljeg artikla: <!--Max preko SQL-a--></h4>
-                <h4><br>Cijena najjeftinijeg artikla: <!--Min preko SQL-a--></h4>
-            </div>
             <div class="col text-center">
-                <h4><br>Ukupan broj korisnika: </h4> <!--Count preko SQL-a koliko ima korisnika u bazi --></h4>
-                <h4><br>Ukupan broj sigurnosnih kopija:  <!-- Count preko SQL-a koliko ima backupa u bazi --></h4>
+                <h4 id="UkBrAr"><br>Ukupan broj artikala:  <!-- Count preko SQL-a koliko ima artikala u bazi --></h4>
+                <h4 id="UkBrDo"><br>Ukupan broj dokumenata:  <!-- Count preko SQL-a koliko ima dokumenata u bazi --></h4>
+                <h4 id="UkBrIz"><br>Ukupan broj izdatnica:  <!-- Count preko SQL-a koliko ima izdatnica u bazi --></h4>
+                <h4 id="UkBrPr"><br>Ukupan broj primki:  <!-- Count preko SQL-a koliko ima primka u bazi --></h4>
+                <h4 id="UkKoAr"><br>Ukupna količina dostupnih artikala:  <!-- Count * Stanje koliko ih ima --></h4>
+                <h4 id="UkCiAr"><br>Ukupna cijena dostupnih artikala:  <!-- zbrojih svih (cijena pojedinog artikla * koliko ga ima)  --></h4>
+                <h4 id="CiMaAr"><br>Cijena najskupljeg artikla: <!--Max preko SQL-a--></h4>
+                <h4 id="CiMiAr"><br>Cijena najjeftinijeg artikla: <!--Min preko SQL-a--></h4>
+                <h4 id="BrKr"><br>Ukupan broj korisnika: </h4> <!--Count preko SQL-a koliko ima korisnika u bazi --></h4>
             </div>
         </div>
     </div>
     </div>
     <script src="../js/app.js"></script>
+    <script src="../js/dashboard.js"></script>
 </body>
 </html>

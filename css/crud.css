@@ -1,0 +1,17 @@
+.crudbuttons{
+    margin-top:25px;
+    margin-left:5px;
+    height:auto;
+    width:auto;
+}
+.crudcontainer{
+    background-color:#8a8080;
+    height:auto;
+    width:auto;
+    overflow:auto;
+}
+.cell {
+    max-width: 150px; 
+    white-space : nowrap;
+    overflow : hidden;
+}

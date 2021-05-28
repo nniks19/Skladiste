@@ -7,10 +7,10 @@
 
 		// constructor
 
-        public function __construct($sSifraDokumenta, $sTipDokumenta, $dDatumDokumenta, $dIznos, $nKolicina, $dIznosUlaz, $dIznosIzlaz){
+        public function __construct($sSifraDokumenta, $sTipDokumenta, $dDatumDokumenta, $dIznos, $nKolicina, $_Artikli, $dIznosUlaz, $dIznosIzlaz){
 			$this->dIznosUlaz =  $dIznosUlaz;
 			$this->dIznosIzlaz = 0;
-			parent::__construct($sSifraDokumenta, $sTipDokumenta, $dDatumDokumenta, $dIznos, $nKolicina);
+			parent::__construct($sSifraDokumenta, $sTipDokumenta, $dDatumDokumenta, $dIznos, $nKolicina, $_Artikli);
 		} 
 
 		// setters

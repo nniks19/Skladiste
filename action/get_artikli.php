@@ -1,7 +1,5 @@
 <?php
 include '../classes/artikl.php';
-include '../classes/izdatnica.php';
-include '../classes/primka.php';
 header('Content-Type: application/json; charset=utf-8');
 function getArtikli($oConnection){
     $sQuery = "SELECT *, 
@@ -49,6 +47,6 @@ function getArtikli($oConnection){
         );
         array_push($arrayArtikli, $row);
     }
-    echo json_encode($arrayArtikli,JSON_UNESCAPED_UNICODE);
+    echo json_encode($arrayArtikli,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }
 ?>

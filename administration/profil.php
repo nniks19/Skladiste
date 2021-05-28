@@ -24,15 +24,14 @@ include '../action/checklogin.php';
         </div>
         <div class="row">
             <div class="col text-center">
-                // moram dodat ispis iz baze
-                <h4><br>Ime:</h4>
-                <h4><br>Prezime</h4>
-                <h4><br>Država</h4>
-                <h4><br>Grad</h4>
-                <h4><br>Broj mobitela</h4>
-                <h4><br>Email</h4>
-                // moram dodat ispis iz baze
-                <h4><br>Korisničko ime: <?=$_SESSION['name']?></h4>
+                <h4>Ime: <h6 id="ime"></h6></h4>
+                <h4>Prezime: <h6 id="prezime"></h6></h4>
+                <h4>Država: <h6 id="drzava"></h6></h4>
+                <h4>Grad: <h6 id="grad"></h6></h4>
+                <h4>Broj mobitela: <h6 id="brmob"></h6></h4>
+                <h4>Email: <h6 id="email"></h6></h4>
+                <hr>
+                <h4>Korisničko ime: <br><?=$_SESSION['name']?></h4>
                 <h4><br>Nova lozinka: </h4>
                 <form method="post" action="/skladiste/action/passwordchange.php" id="changepassform">
                     <div class="form-floating">
@@ -53,5 +52,15 @@ if (isset($_SESSION['error'])){
     echo '<script>alert("'.$_SESSION['error'].'")</script>';
     unset($_SESSION['error']);
 }
-
+$sQuery = "SELECT ime,prezime,drzava,grad,broj_mobitela,email FROM Korisnici";
+    $oRecord = $oConnection->query($sQuery);
+    while($oRow=$oRecord->fetch(PDO::FETCH_BOTH)){
+        echo '<script>document.getElementById("ime").innerHTML = "'.$oRow["ime"].'";
+        document.getElementById("prezime").innerHTML = "'.$oRow['prezime'].'";
+        document.getElementById("drzava").innerHTML = "'.$oRow['drzava'].'";
+        document.getElementById("grad").innerHTML = "'.$oRow['grad'].'";
+        document.getElementById("brmob").innerHTML = "'.$oRow['broj_mobitela'].'";
+        document.getElementById("email").innerHTML = "'.$oRow['email'].'";
+        </script>';
+    }
 ?>

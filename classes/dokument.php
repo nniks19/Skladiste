@@ -6,15 +6,17 @@
         public $dDatumDokumenta;
         public $dIznos;
 		public $nKolicina;
+		public $_Artikli;
 
 		// constructor
 
-        public function __construct($sSifraDokumenta, $sTipDokumenta, $dDatumDokumenta, $dIznos, $nKolicina){
+        public function __construct($sSifraDokumenta, $sTipDokumenta, $dDatumDokumenta, $dIznos, $nKolicina, $_Artikli){
 			$this->sSifraDokumenta = $sSifraDokumenta;
 			$this->sTipDokumenta =  $sTipDokumenta;
 			$this->dDatumDokumenta = $dDatumDokumenta;
 			$this->dIznos = $dIznos;
 			$this->nKolicina = $nKolicina;
+			$this->_Artikli = $_Artikli;
 		} 
 
 		// setters

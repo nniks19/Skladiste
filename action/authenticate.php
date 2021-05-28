@@ -1,5 +1,6 @@
 <?php
 include '../connection.php';
+session_start();
 if (empty($_POST['username']) || empty($_POST['password']) ) {
 	// Ako netko proba otvoriti samo stranicu authenticate.php bez koristenja forme
 	$_SESSION['error'] = "Potrebno je popuniti oba polja!";

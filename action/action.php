@@ -11,6 +11,10 @@ if (isset($_GET['action_id'])) {
         include 'get_artikli.php';
         getArtikli($oConnection);
         break;
+        case 'get_artikli_crud':
+        include 'get_artikli_crud.php';
+        getArtikliCrud($oConnection);
+        break;
         case 'insert_izdatnica':
         include 'insert_izdatnica.php';
         insertIzdatnica($oConnection);
@@ -18,6 +22,10 @@ if (isset($_GET['action_id'])) {
         case 'insert_primka':
         include 'insert_primka.php';
         insertPrimka($oConnection);
+        break;
+        case 'get_dashboard_stats':
+        include 'get_dashboard_stats.php';
+        getDashboardStats($oConnection);
         break;
     }	
 }

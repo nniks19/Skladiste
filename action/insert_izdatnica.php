@@ -5,8 +5,6 @@ function insertIzdatnica($oConnection){
 
     $sQuery = "
     INSERT INTO Dokument (Dok_Sifra, Dok_Tip, Dok_Datum) VALUES ((SELECT CONCAT(CONCAT(Year(CURRENT_TIMESTAMP),'-'),COALESCE(max((SUBSTRING(dok.Dok_Sifra, 6, LENGTH(dok.Dok_Sifra)-1) + 1)),1)) AS NextID FROM Dokument AS dok WHERE dok.Dok_Sifra LIKE '%2021%'), 'IZD', current_timestamp);
-    
-
     ";
     try
     {
