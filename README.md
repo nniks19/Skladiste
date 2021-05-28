@@ -34,7 +34,7 @@ TO DO LIST:
 
 Backup - spremanje podataka u .txt datoteku koja će sadržavati komandu za rekreiranje baze podataka + dodavanje svih podataka ponovno u bazu
 
-Login - Zasebna baza koja će sadržavati Tablicu sa podacima: Korisničko_Ime, Lozinka, Tajni_Kljuc || Dodati sustav za hash lozinke (zbog sigurnosti)
+Login - Tablica koja sadržava podatke: Korisničko_Ime, Lozinka, Tajni_Kljuc || Dodati sustav za hash lozinke (zbog sigurnosti)
 
 Zaboravili ste lozinku? - Korisnik će moći vratiti svoju lozinku putem tajnog ključa kojeg je upisao prilikom registracije.
 
