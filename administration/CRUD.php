@@ -27,10 +27,11 @@ include '../action/checklogin.php';
         <label class="btn btn-outline-dark" for="btnradio2">Izdatnice</label>
         <input type="radio" class="btn-check" name="btnradio" onclick="divPrimke()"id="btnradio3" autocomplete="off">
         <label class="btn btn-outline-dark" for="btnradio3">Primke</label>
+        <input type="radio" class="btn-check" name="btnradio" onclick="divKategorije()" id="btnradio4" autocomplete="off">
+        <label class="btn btn-outline-dark" for="btnradio4">Kategorije</label>
     </div>
 </div>
 <div class="crudcontainer" id="divtablica">
-    
 </div>
 
 <script src="../js/app.js"></script>

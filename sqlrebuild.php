@@ -29,8 +29,8 @@ CREATE TABLE Artikl_Dokument (
     Artikl_Sifra VARCHAR(10),
     Kolicina INT,
     Iznos DECIMAL(15,2),
-    CONSTRAINT FK_Artikl FOREIGN KEY(Artikl_Sifra) REFERENCES Artikl(Sifra),
-    CONSTRAINT FK_Dokument FOREIGN KEY(Dok_Sifra) REFERENCES Dokument(Dok_Sifra)
+    CONSTRAINT FK_Artikl FOREIGN KEY(Artikl_Sifra) REFERENCES Artikl(Sifra) ON DELETE CASCADE,
+    CONSTRAINT FK_Dokument FOREIGN KEY(Dok_Sifra) REFERENCES Dokument(Dok_Sifra) ON DELETE CASCADE
 );
 CREATE TABLE Korisnici (
     id int(11) NOT NULL AUTO_INCREMENT,
@@ -145,7 +145,7 @@ INSERT INTO Dokument (Dok_Sifra, Dok_Tip, Dok_Datum) VALUES ('2021-1', 'PRM', '2
 INSERT INTO Artikl_Dokument (Dok_Sifra, Artikl_Sifra, Kolicina, Iznos) VALUES ('2021-1', 'AR1', 100, (SELECT Cijena from artikl WHERE Sifra = 'AR1') * 100);
 INSERT INTO Artikl_Dokument (Dok_Sifra, Artikl_Sifra, Kolicina, Iznos) VALUES ('2021-1', 'AR5', 500, (SELECT Cijena from artikl WHERE Sifra = 'AR5') * 500);
 INSERT INTO Artikl_Dokument (Dok_Sifra, Artikl_Sifra, Kolicina, Iznos) VALUES ('2021-1', 'AR10', 800, (SELECT Cijena from artikl WHERE Sifra = 'AR10') * 800);
-INSERT INTO Artikl_Dokument (Dok_Sifra, Artikl_Sifra, Kolicina, Iznos) VALUES ('2021-11', 'AR11', 1250, (SELECT Cijena from artikl WHERE Sifra = 'AR11') * 1250);
+INSERT INTO Artikl_Dokument (Dok_Sifra, Artikl_Sifra, Kolicina, Iznos) VALUES ('2021-1', 'AR11', 1250, (SELECT Cijena from artikl WHERE Sifra = 'AR11') * 1250);
 INSERT INTO Dokument (Dok_Sifra, Dok_Tip, Dok_Datum) VALUES ('2021-2', 'PRM', '2021-05-17 12:30:00');
 INSERT INTO Artikl_Dokument (Dok_Sifra, Artikl_Sifra, Kolicina, Iznos) VALUES ('2021-2', 'AR2', 1000, (SELECT Cijena from artikl WHERE Sifra = 'AR2') * 1000);
 INSERT INTO Artikl_Dokument (Dok_Sifra, Artikl_Sifra, Kolicina, Iznos) VALUES ('2021-2', 'AR6', 10000, (SELECT Cijena from artikl WHERE Sifra = 'AR6') * 10000);
@@ -162,6 +162,7 @@ INSERT INTO Dokument (Dok_Sifra, Dok_Tip, Dok_Datum) VALUES ('2021-5', 'PRM', '2
 INSERT INTO Artikl_Dokument (Dok_Sifra, Artikl_Sifra, Kolicina, Iznos) VALUES ('2021-5', 'AR4', 18579, (SELECT Cijena from artikl WHERE Sifra = 'AR4') * 18579);
 INSERT INTO Dokument (Dok_Sifra, Dok_Tip, Dok_Datum) VALUES ('2021-6', 'IZD', '2021-05-17 14:03:25');
 INSERT INTO Artikl_Dokument (Dok_Sifra, Artikl_Sifra, Kolicina, Iznos) VALUES ('2021-6', 'AR18', 1000, (SELECT Cijena from Artikl where Sifra='AR18')* 1000);
+INSERT INTO Artikl_Dokument (Dok_Sifra, Artikl_Sifra, Kolicina, Iznos) VALUES ('2021-6', 'AR4', 1000, (SELECT Cijena from Artikl where Sifra='AR4')* 1000);
     ";
 function recursiveFunction($oConnection, $sqlCommand){
 try{

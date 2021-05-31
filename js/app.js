@@ -21,8 +21,8 @@ oSkladisteModul.directive("login",
 		}
 	}
 )
-var oHeaderPanelModul = angular.module('skladiste-panel', []);
-oHeaderPanelModul.directive("headerpanelnav",
+var oSkladistePanelModul = angular.module('skladiste-panel', []);
+oSkladistePanelModul.directive("headerpanelnav",
 	function(){
 		return{
 			restrict: "E",
