@@ -51,6 +51,22 @@ if (isset($_GET['action_id'])) {
             include 'delete_izdatnica.php';
             deleteIzdatnica($oConnection);
             break;
+        case 'delete_kategorija':
+            include 'delete_kategorija.php';
+            deleteKategorija($oConnection);
+            break;
+        case 'update_kategorija':
+            include 'update_kategorija.php';
+            updateKategorija($oConnection);
+            break;
+        case 'add_kategorija':
+            include 'add_kategorija.php';
+            addKategorija($oConnection);
+            break;
+        case 'add_artikl':
+            include 'add_artikl.php';
+            addArtikl($oConnection);
+            break;
     }	
 }
 
