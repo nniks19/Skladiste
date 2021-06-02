@@ -39,8 +39,8 @@ function LoadArticles(){
                     '<td>'+oData[i].sArtikl_JedMj+'</td>'+
                     '<td>'+oData[i].dArtikl_Cijena+'</td>'+
                     '<td class="cell">'+oData[i].sArtikl_URL+'</td>' +
-                    '<td>'+oData[i].sArtikl_Kategorija+'</td>'+
-                    '<td id='+oData[i].sArtikl_Sifra+'><svg onclick="urediArtikl(this)" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16"><path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/><path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/></svg></td>'+
+                    '<td id="'+oData[i].sArtikl_Kategorija.sArtikl_KategorijaId+'">'+oData[i].sArtikl_Kategorija.sArtikl_Kategorija+'</td>'+
+                    '<td id='+oData[i].sArtikl_Sifra+'><svg onclick="urediArtikl(this)" data-bs-toggle="modal" data-bs-target="#modalEditArtikl" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16"><path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/><path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/></svg></td>'+
                     '<td id='+oData[i].sArtikl_Sifra+'><svg onclick="obrisiArtikl(this)" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16"><path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/><path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/></svg></td>'+
                     '</tr>';
                     $('#tablebodyarticles').append(sRow);
@@ -121,9 +121,77 @@ function LoadKategorije(){
     });
 }
 
-//uređivanje
+//Uređivanje
+
 var idkategorije;
 function urediArtikl(elem){
+    $("#editartiklkategorija").html("");
+    const sibling = (elem, count) => count ? sibling(elem.nextSibling, count - 1) : elem; // helper - alternativa od .nextSibling.nextSibling.nextSibling... za prolazak kroz tablicu
+    $.ajax(
+        {
+        url:'../action/action.php?action_id=get_kategorije_crud',
+        type: 'GET',
+        success:function (oData){
+            for(var i=0;i<oData.length;i++){
+                if (sibling(elem.parentNode.parentNode.firstChild, 6).id == oData[i].nIdKategorije){
+                    var sRow= '<option id="'+ oData[i].nIdKategorije+'" selected="selected">'+oData[i].sNazivKategorije+'</option>';
+                } else {
+                    var sRow= '<option id="'+ oData[i].nIdKategorije+'">'+oData[i].sNazivKategorije+'</option>';
+                }
+                $('#editartiklkategorija').append(sRow);
+            }
+        }
+    });
+    $("#editartiklid").html(sibling(elem.parentNode.parentNode.firstChild, 0).innerHTML);
+    $("#editartiklnaziv").val(sibling(elem.parentNode.parentNode.firstChild, 1).innerHTML);
+    $("#editartiklopis").val(sibling(elem.parentNode.parentNode.firstChild, 2).innerHTML);
+    $("#editartikljmj").val(sibling(elem.parentNode.parentNode.firstChild, 3).innerHTML);
+    $("#editartiklcijena").val(sibling(elem.parentNode.parentNode.firstChild, 4).innerHTML);
+    $("#editartiklurl").val(sibling(elem.parentNode.parentNode.firstChild, 5).innerHTML);
+}
+function urediSpremiArtikl(){
+    if ($("#editartiklnaziv").val() && $("#editartiklnaziv").val().trim()){
+        if ($("#editartiklopis").val() && $("#editartiklopis").val().trim()){
+            if ($("#editartikljmj").val() && $("#editartikljmj").val().trim()){
+                if ($("#editartiklcijena").val().endsWith('.') == false){
+                    if ($("#editartiklcijena").val() && $("#editartiklcijena").val().trim()){
+                        if ($("#editartiklurl").val() && $("#editartiklurl").val().trim()){
+                            if (isImgLink($("#editartiklurl").val())){
+                                $('#modalEditArtikl').modal('toggle');
+                                $.ajax({
+                                    data: {idar: $("#editartiklid").html(), nazivar: $("#editartiklnaziv").val(), opisar: $("#editartiklopis").val(), jmjar: $("#editartikljmj").val(), cijenaar: $("#editartiklcijena").val(), katar: $('#editartiklkategorija option:selected').attr('id'), urlar:$("#editartiklurl").val()},
+                                    url:'../action/action.php?action_id=update_artikl',
+                                    type: 'POST',
+                                    success: function(msg){
+                                        if (msg.success ==1){
+                                            alert("Artikl je uspješno promijenjen!");
+                                        } else {
+                                            alert("Artikl nije promijenjen, pogreška se dogodila kod baze podataka!");
+                                        }
+                                        divArtikli();
+                                    }
+                                })
+                            } else {
+                                alert("URL koji ste unijeli ne sadržava putanju do slike jednog od formata: jpg|jpeg|gif|png|tiff|bmp!");
+                            }
+                        } else {
+                            alert("Obavezan je unos URL-a slike artikla! (Nije dovoljno samo napisati razmak ili ostaviti prazno polje)")
+                        }
+                    } else{
+                        alert("Obavezan je unos cijene artikla! (Nije dovoljno samo napisati razmak ili ostaviti prazno polje)");
+                    }
+                } else {
+                    alert("Kod cijene na zadnjem mjestu ne smije biti točka!");
+                }
+            } else {
+                alert("Obavezan je unos jedinične mjere artikla! (Nije dovoljno samo napisati razmak ili ostaviti prazno polje)")
+            }
+        } else {
+            alert("Obavezan je unos opisa artikla! (Nije dovoljno samo napisati razmak ili ostaviti prazno polje)")
+        }
+    } else {
+        alert("Obavezan je unos naziva artikla! (Nije dovoljno samo napisati razmak ili ostaviti prazno polje)");
+    }
 }
 function urediIzdatnicu(elem){
 }
@@ -315,8 +383,6 @@ function dodajNoviArtikl(){
     } else {
         alert("Obavezan je unos naziva artikla! (Nije dovoljno samo napisati razmak ili ostaviti prazno polje)");
     }
-    // dohvacanje ida kategorije $('#addartiklkategorija option:selected').attr('id')
-    // u slucaju da su svi dobri dodaj ovo $('#modalAddArtikl').modal('toggle');
 }
 
 // Dodatne provjere
@@ -337,6 +403,37 @@ function isNumberKey(evt)
         return false;
        }
        if ($("#addartiklcijena:text").val() == "")
+       {
+        alert("Na prvo mjesto ne može ići točka!");
+        return false;
+       }
+     }
+     if (charCode != 46 && charCode > 31 && (charCode < 48 || charCode > 57))
+     {
+       alert("Pokušali ste unesti u polje cijene nešto što nije broj/decimalna točka");
+        return false;
+      }
+    else
+     {
+     return true;
+     }
+}
+function isNumberKeyd(evt)
+   {
+     var charCode = (evt.which) ? evt.which : evt.keyCode;
+     if ($("#editartiklcijena:text").val() == "-" && charCode == 46)
+     {
+       alert("Nije moguće postaviti - pa .");
+       return false;
+     }
+     if (charCode == 46)
+     {
+       if ($("#editartiklcijena").val().includes("."))
+       {
+         alert("Cijena već sadrži decimalnu točku");
+        return false;
+       }
+       if ($("#editartiklcijena:text").val() == "")
        {
         alert("Na prvo mjesto ne može ići točka!");
         return false;

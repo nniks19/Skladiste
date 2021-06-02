@@ -97,6 +97,31 @@ include '../action/checklogin.php';
   </div>
 </div>
 
+<!-- Modal Uredi Artikl -->
+<div class="modal fade" id="modalEditArtikl" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalEditArtiklLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalEditArtiklLabel">Uredi artikl</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+      <p>ID Artikla: <a id="editartiklid"></a></p>
+      <p>Naziv Artikla: <input type="text" name="Naziv artikla" id="editartiklnaziv"></p>
+      <p>Opis Artikla: <input type="text" name="Opis artikla" id="editartiklopis"></p>
+      <p>JMJ: <input type="text" name="JMJ artikla" id="editartikljmj"></p>
+      <p>Cijena: <input type="text" name="Cijena artikla" id="editartiklcijena" onkeypress="return isNumberKeyd(event)"></p>
+      <p>URL Slike artikla: <input type="text" name="URL Slike artikla" id="editartiklurl"></p>
+      <p>Odaberite kategoriju artikla: <select id="editartiklkategorija"></select></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zatvori</button>
+        <button type="button" class="btn btn-primary" onclick="urediSpremiArtikl()">Spremi promjene</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script src="../js/app.js"></script>
 <script src="../js/crud.js"></script>
 </body>

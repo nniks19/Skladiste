@@ -1,14 +1,16 @@
 <?php
 header('Content-Type: application/json; charset=utf-8');
-function addArtikl($oConnection){
+function updateArtikl($oConnection){
     // kasnije dodaj ucitavanje u klasu i ispis iz klase
+    $IdArtikla = $_POST['idar'];
     $NazivArtikla = $_POST['nazivar'];
     $OpisArtikla = $_POST['opisar'];
     $JMJArtikla = $_POST['jmjar'];
     $CijenaArtikla = $_POST['cijenaar'];
     $KategorijaArtikla = $_POST['katar'];
     $URLArtikla = $_POST['urlar'];
-    $sQuery = "INSERT INTO Artikl (Sifra, Naziv, Opis, Jed_Mj, Cijena, Kategorija_Id, URL) VALUES (CONCAT('AR',(SELECT max( CAST(SUBSTRING(R.Sifra, 3, LENGTH(R.Sifra)-2) AS UNSIGNED)+1 ) FROM Artikl AS R)), '$NazivArtikla', '$OpisArtikla', '$JMJArtikla', $CijenaArtikla, $KategorijaArtikla, '$URLArtikla');";
+    $sQuery = "UPDATE Artikl SET Naziv = '$NazivArtikla', Opis = '$OpisArtikla',  Jed_Mj = '$JMJArtikla', Cijena = '$CijenaArtikla', Kategorija_Id = '$KategorijaArtikla',  URL = '$URLArtikla' WHERE Sifra = '$IdArtikla';";
+    unset($_POST['idar']);
     unset($_POST['nazivar']);
     unset($_POST['opisar']);
     unset($_POST['jmjar']);

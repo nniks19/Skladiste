@@ -67,6 +67,10 @@ if (isset($_GET['action_id'])) {
             include 'add_artikl.php';
             addArtikl($oConnection);
             break;
+        case 'update_artikl':
+            include 'update_artikl.php';
+            updateArtikl($oConnection);
+            break;
     }	
 }
 
