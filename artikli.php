@@ -1,22 +1,23 @@
 <!DOCTYPE html>
-<html lang="hr" ng-app="skladiste-app">
+<html lang="hr">
 <head>
     <title>VUV gradnja d.o.o - Artikli</title>
     <meta charset="utf‐8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css">
-    <script src="https://cdn.datatables.net/plug-ins/1.10.16/sorting/natural.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <script src="assets/jquery-3.6.0.js"></script>
+    <script src="assets/angular.js"></script>
+    <script src="assets/jquery.dataTables.min.js"></script>
+    <script src="assets/natural.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/angular-datatables.min.js"></script>
+    <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/jquery.dataTables.css" rel="stylesheet" type="text/css">
     <link href="css/artikli.css" rel="stylesheet">
 </head>
-<body>
+<body ng-app="skladiste-app">
 <headernav></headernav>
-<div class="container-fluid containerarticle">
-    <table class="table table-dark table-striped" id="tablicaartikli">
+<div class="container-fluid containerarticle" ng-controller="listaArtikala">
+    <table class="table table-dark table-striped" id="tablicaartikli" datatable="ng">
     <thead>
     <tr>
       <th scope="col">Šifra artikla</th>
@@ -32,12 +33,23 @@
     </tr>
   </thead>
   <tbody id="tablebodyarticles">
+    <tr ng-repeat="oData in Artikli">
+      <td>{{oData.Artikl.sArtikl_Sifra}}</td>
+      <td>{{oData.Artikl.sArtikl_Naziv}}</td>
+      <td>{{oData.Artikl.sArtikl_JedMj}}</td>
+      <td>{{oData.Artikl.dArtikl_Cijena}}</td>
+      <td>{{oData.KolicinaUlaz}}</td>
+      <td>{{oData.IznosUlaz}}</td>
+      <td>{{oData.KolicinaIzlaz}}</td>
+      <td>{{oData.IznosIzlaz}}</td>
+      <td>{{oData.StanjeKolicina}}</td>
+      <td>{{oData.StanjeIznos}}</td>
+    </tr>
   </tbody>
     </table>
 </div>
 
 <footercopy class="footer text-center mt-auto"></footercopy>
 <script src="js/app.js"></script>
-<script src="js/artikli.js"></script>
 </body>
 </html>
