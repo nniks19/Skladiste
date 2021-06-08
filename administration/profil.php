@@ -37,7 +37,7 @@ include '../action/checklogin.php';
                 <hr>
                 <h4>Korisničko ime: <br><?=$_SESSION['name']?></h4>
                 <h4><br>Nova lozinka: </h4>
-                <form method="post" action="/skladiste/action/passwordchange.php" id="changepassform">
+                <form method="post" action="../action/passwordchange.php" id="changepassform">
                     <div class="form-floating">
                         <input type="password" id="newpassword" name="newpassword" placeholder="Nova lozinka"></input>
                     </div>

@@ -28,13 +28,16 @@ if($form_data->action == "dohvati_artikl"){
 } 
 elseif($form_data->action == "Delete")
 {
-	$query = "DELETE FROM Dokument WHERE dokument.Dok_Sifra = '$form_data->id'
+    $data = array(
+        ':doksifra' =>$form_data->id
+    );
+	$query = "DELETE FROM Dokument WHERE dokument.Dok_Sifra = :doksifra
     AND (SELECT Count(*) FROM ( (SELECT ((Select IFNULL(SUM(Kolicina),0) FROM artikl_dokument INNER JOIN dokument ON artikl_dokument.Dok_Sifra = dokument.Dok_Sifra AND dokument.Dok_Tip = 'PRM' 
-    WHERE artikl_dokument.Artikl_Sifra = Artikl.Sifra  AND artikl_dokument.Dok_Sifra != '$form_data->id') - (Select IFNULL(SUM(Kolicina),0) FROM artikl_dokument INNER JOIN dokument ON 
+    WHERE artikl_dokument.Artikl_Sifra = Artikl.Sifra  AND artikl_dokument.Dok_Sifra != :doksifra) - (Select IFNULL(SUM(Kolicina),0) FROM artikl_dokument INNER JOIN dokument ON 
     artikl_dokument.Dok_Sifra = dokument.Dok_Sifra AND dokument.Dok_Tip = 'IZD' AND artikl_dokument.Dok_Sifra WHERE artikl_dokument.Artikl_Sifra = Artikl.Sifra)) AS Razlika FROM Artikl
-    WHERE Sifra IN (SELECT artikl_sifra FROM artikl_dokument WHERE dok_sifra = '$form_data->id'))) final WHERE Razlika < 0) = 0";
+    WHERE Sifra IN (SELECT artikl_sifra FROM artikl_dokument WHERE dok_sifra = :doksifra))) final WHERE Razlika < 0) = 0";
 	$statement = $oConnection->prepare($query);
-    $statement->execute();
+    $statement->execute($data);
     if ($statement->rowCount() > 0){
         $output['message'] = 'Primka je uspješno obrisana!';
     } else {

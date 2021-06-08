@@ -2,6 +2,7 @@
 
 include('../connection.php');
 include('../classes/artikl.php');
+include('../classes/kategorija.php');
 
 $form_data = json_decode(file_get_contents("php://input"));
 
@@ -18,20 +19,27 @@ $Artikl_Kategorija = '';
 
 if($form_data->action == 'dohvati_artikl')
 {
-    $query = "SELECT Artikl.Sifra, Artikl.Naziv, Artikl.Opis, Artikl.Jed_Mj, Artikl.Cijena, Artikl.URL, Kategorija.Kategorija_Id, Kategorija.Kategorija_Naziv FROM Artikl  INNER JOIN Kategorija on Artikl.Kategorija_Id = Kategorija.Kategorija_Id WHERE Artikl.Sifra='".$form_data->Artikl_Sifra."';";
+	$data = array(
+		':ArtiklS' =>$form_data->Artikl_Sifra
+	);
+    $query = "SELECT Artikl.Sifra, Artikl.Naziv, Artikl.Opis, Artikl.Jed_Mj, Artikl.Cijena, Artikl.URL, Kategorija.Kategorija_Id, Kategorija.Kategorija_Naziv FROM Artikl  INNER JOIN Kategorija on Artikl.Kategorija_Id = Kategorija.Kategorija_Id WHERE Artikl.Sifra=:ArtiklS;";
 	$statement = $oConnection->prepare($query);
-	$statement->execute();
+	$statement->execute($data);
 	$result = $statement->fetchAll();
 	$output = [];
 	foreach($result as $row)
 	{
+		$oKategorija = new Kategorija(
+			$row['Kategorija_Id'],
+			$row['Kategorija_Naziv']
+		);
 		$oArtikl=new Artikl(
             $row['Sifra'],
             $row['Naziv'],
             $row['Opis'],
             $row['Jed_Mj'],
             $row['Cijena'],
-            array('sArtikl_Kategorija' => $row['Kategorija_Naziv'], 'sArtikl_KategorijaId' => $row['Kategorija_Id']),
+			$oKategorija,
             $row['URL']
         );
         array_push($output, $oArtikl);
@@ -39,12 +47,15 @@ if($form_data->action == 'dohvati_artikl')
 }
 elseif($form_data->action == "Delete")
 {
+	$data = array(
+		':ArtiklS' =>$form_data->id
+	);
 	$query = "
-	DELETE FROM Artikl WHERE Sifra='".$form_data->id."';
+	DELETE FROM Artikl WHERE Sifra=:ArtiklS;
 	DELETE FROM Dokument WHERE NOT Exists (Select NULL FROM artikl_dokument ad WHERE ad.dok_sifra = dokument.dok_sifra);
 	";
 	$statement = $oConnection->prepare($query);
-	if($statement->execute())
+	if($statement->execute($data))
 	{
 		$output['message'] = 'Artikl je uspješno obrisan! Ako je ovaj artikl bio jedini na nekom od dokumenata, onda je i taj dokument obrisan.';
 	}

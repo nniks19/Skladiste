@@ -210,7 +210,7 @@ appCRUD.controller('artikliCRUD', function($scope, $http){
 			$scope.Artikl_Cijena = data.data[0].dArtikl_Cijena;
 			$scope.Artikl_URL = data.data[0].sArtikl_URL;
 			$scope.hidden_id = id;
-			$scope.Artikl_Kategorija = data.data[0].sArtikl_Kategorija.sArtikl_KategorijaId;
+			$scope.Artikl_Kategorija = data.data[0].sArtikl_Kategorija.nArtikl_KategorijaId;
 			$scope.modalNaslov = 'Uredi podatke';
 			$scope.submit_button = 'UREDI';
 			$scope.openModal();
