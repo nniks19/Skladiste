@@ -122,13 +122,13 @@ appCRUD.controller('kategorijeCRUD', function($scope, $http){
 				url:"../action/kategorija.php",
 				data:{'id':id, 'action':'Delete'}
 			}).then(function(response){
-				if (response.data && !response.data.message){
-					alert("Nije moguće obrisati kategoriju jer postoji artikl sa ovom kategorijom!");
+				if (response.data.error){
+					alert(response.data.error);
 				}
-				if (response.data && response.data.message){
-					alert("Kategorija je uspješno obrisana!");
+				if (response.data.message){
+					alert(response.data.message);
+					$scope.dohvatiKategorije();
 				}
-				$scope.dohvatiKategorije();
 			});
 		}
 	};
