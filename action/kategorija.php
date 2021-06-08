@@ -6,15 +6,15 @@ include('../classes/kategorija.php');
 $form_data = json_decode(file_get_contents("php://input"));
 
 $error = [];
-$validation_error = '';
-$Kategorija_Id= '';
-$Kategorija_Naziv = '';
 
 if($form_data->action == 'dohvati_kategoriju')
 {
-	$query = "SELECT * FROM Kategorija WHERE Kategorija_Id='".$form_data->Kategorija_Id."'";
+	$data = array(
+		':KategorijaId'		=>	$form_data->Kategorija_Id
+	);
+	$query = "SELECT * FROM Kategorija WHERE Kategorija_Id=:KategorijaId";
 	$statement = $oConnection->prepare($query);
-	$statement->execute();
+	$statement->execute($data);
 	$result = $statement->fetchAll();
 	$output = [];
 	foreach($result as $row)
@@ -28,14 +28,25 @@ if($form_data->action == 'dohvati_kategoriju')
 }
 elseif($form_data->action == "Delete")
 {
+	$data = array(
+		':KategorijaId'		=>	$form_data->id
+	);
 	$query = "
-	DELETE FROM Kategorija WHERE Kategorija_Id='".$form_data->id."'
-	";
+	DELETE FROM Kategorija WHERE Kategorija_Id=:KategorijaId";
 	$statement = $oConnection->prepare($query);
-	if($statement->execute())
-	{
-		$output['message'] = 'Kategorija je uspješno obrisana!';
+	try{
+		if($statement->execute($data))
+		{
+
+		}
 	}
+	catch(Exception $e){
+	}
+	if ($statement->rowCount() > 0){
+        $output['message'] = 'Kategorija je uspješno obrisana!';
+    } else {
+        $output['error'] = 'Nije moguće obrisati kategoriju jer barem jedan artikl ima ovu kategoriju.';
+    }
 }
 elseif($form_data->action == 'DODAJ'){
 	if(empty($form_data->Kategorija_Naziv))
