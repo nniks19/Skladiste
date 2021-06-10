@@ -1,6 +1,5 @@
 <?php
 include '../classes/artikl.php';
-header('Content-Type: application/json; charset=utf-8');
 function getArtikli($oConnection){
     $sQuery = "SELECT *, 
     (Select SUM(Kolicina) FROM artikl_dokument

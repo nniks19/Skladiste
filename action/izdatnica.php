@@ -68,7 +68,7 @@ elseif($form_data->action == 'DODAJ'){
 				':Artikli' =>$form_data->Artikli
 			);
 			$query = "
-            INSERT INTO Dokument (Dok_Sifra, Dok_Tip, Dok_Datum) VALUES ((SELECT CONCAT(CONCAT(Year(CURRENT_TIMESTAMP),'-'),COALESCE(max((SUBSTRING(dok.Dok_Sifra, 6, LENGTH(dok.Dok_Sifra)-1) + 1)),1)) AS NextID FROM Dokument AS dok WHERE dok.Dok_Sifra LIKE '%2021%'), 'PRM', current_timestamp);
+            INSERT INTO Dokument (Dok_Sifra, Dok_Tip, Dok_Datum) VALUES ((SELECT CONCAT(CONCAT(Year(CURRENT_TIMESTAMP),'-'),COALESCE(max((SUBSTRING(dok.Dok_Sifra, 6, LENGTH(dok.Dok_Sifra)-1) + 1)),1)) AS NextID FROM Dokument AS dok WHERE dok.Dok_Sifra LIKE '%2021%'), 'IZD', current_timestamp);
 			";
             foreach ($form_data->Artikli as $Artikl){
                 $query .= "INSERT INTO Artikl_Dokument (Dok_Sifra, Artikl_Sifra, Kolicina, Iznos) VALUES ((SELECT Dok_Sifra From Dokument ORDER BY Dok_Datum DESC LIMIT 1), '$Artikl->SifraArtikla', $Artikl->UnosKolicina, ($Artikl->UnosKolicina * $Artikl->Artikl_Cijena));";

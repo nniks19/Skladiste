@@ -54,7 +54,7 @@ appCRUD.directive("headerpanelnav",
 
 //kontroleri
 
-
+//KategorijeCRUD.php
 appCRUD.controller('kategorijeCRUD', function($scope, $http){
 	$scope.dohvatiKategorije = function(){
         $http({
@@ -134,7 +134,7 @@ appCRUD.controller('kategorijeCRUD', function($scope, $http){
 	};
 
 });
-
+//ArtikliCRUD.php
 appCRUD.controller('artikliCRUD', function($scope, $http){
 	$scope.dohvatiArtikle = function(){
         $http({
@@ -234,7 +234,7 @@ appCRUD.controller('artikliCRUD', function($scope, $http){
 	};
 
 });
-
+//IzdatniceCRUD.php
 appCRUD.controller('izdatniceCRUD', function($scope, $http){
 	$scope.OdabraniArtikli = [];
 	$scope.dohvatiIzdatnice = function(){
@@ -349,7 +349,7 @@ appCRUD.controller('izdatniceCRUD', function($scope, $http){
 	};
 
 });
-
+//PrimkeCRUD.php
 appCRUD.controller('primkeCRUD', function($scope, $http){
 	$scope.OdabraniArtikli = [];
 	$scope.dohvatiPrimke = function(){
@@ -463,4 +463,22 @@ appCRUD.controller('primkeCRUD', function($scope, $http){
 		}
 	};
 
+});
+//profil.php
+appCRUD.controller('profilController', function($scope, $http){
+	$http({
+		method:'get',
+		url: '../action/fetch_korisnik.php'
+	}).then(function successCallback(response){
+		$scope.Korisnici = response.data;
+	});
+});
+//dashboard.php
+appCRUD.controller('dashboardController', function($scope, $http){
+	$http({
+		method:'get',
+		url: '../action/get_dashboard_stats.php'
+	}).then(function successCallback(response){
+		$scope.Statistika = response.data;
+	});
 });

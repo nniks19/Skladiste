@@ -1,5 +1,5 @@
 <?php
-function getDashboardStats($oConnection){
+include '../connection.php';
     $sQuery = "
     SELECT (SELECT COUNT(*) FROM   Artikl) AS UkBrAr,
     (SELECT COUNT(*) FROM Dokument) AS UkBrDo,
@@ -9,7 +9,8 @@ function getDashboardStats($oConnection){
         (SELECT sum(artikl_dokument.Iznos) - (SELECT sum(artikl_dokument.Iznos) FROM artikl_dokument INNER JOIN Dokument ON Dokument.Dok_Tip = 'IZD' AND Dokument.Dok_Sifra = artikl_dokument.Dok_Sifra) FROM artikl_dokument)as UkCiAr,
     (SELECT max(cijena) FROM Artikl) as CiMaAr,
     (SELECT min(cijena) FROM Artikl) as CiMiAr,
-    (SELECT COUNT(*) FROM Korisnici) as BrKr
+    (SELECT COUNT(*) FROM Korisnici) as BrKr,
+    (SELECT COUNT(*) FROM Kategorija) as BrKa
     ";
     // U PHP-u za brojac koliko je necega bi se napravilo count($_NazivArraya);
     // U PHP-u za sumu bi spremio samo sve sume u jedan array i napisao array_sum($_NazivArraya);
@@ -27,10 +28,10 @@ function getDashboardStats($oConnection){
             'UkCiAr' =>$oRow['UkCiAr'],
             'CiMaAr' =>$oRow['CiMaAr'],
             'CiMiAr' =>$oRow['CiMiAr'],
-            'BrKr' =>$oRow['BrKr']
+            'BrKr' =>$oRow['BrKr'],
+            'BrKa' =>$oRow['BrKa']
         );
         array_push($arrayStats, $row);
     }
     echo json_encode($arrayStats,JSON_UNESCAPED_UNICODE);
-}
 ?>

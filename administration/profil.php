@@ -1,11 +1,15 @@
 <?php
 include '../action/checklogin.php';
+if (isset($_SESSION['error'])){
+    echo '<script>alert("'.$_SESSION['error'].'")</script>';
+    unset($_SESSION['error']);
+}
 ?>
 
 <!DOCTYPE html>
-<html lang="hr" ng-app="skladiste-panel">
+<html lang="hr" ng-app="skladiste-panel" ng-controller="profilController">
 <head>
-    <title>VUV gradnja d.o.o - <?=$_SESSION['name']?></title>
+    <title>VUV gradnja d.o.o - </title>
     <meta charset="utf‐8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <script src="../assets/jquery-3.6.0.js"></script>
@@ -27,13 +31,13 @@ include '../action/checklogin.php';
             <hr>
         </div>
         <div class="row">
-            <div class="col text-center">
-                <h4>Ime: <h6 id="ime"></h6></h4>
-                <h4>Prezime: <h6 id="prezime"></h6></h4>
-                <h4>Država: <h6 id="drzava"></h6></h4>
-                <h4>Grad: <h6 id="grad"></h6></h4>
-                <h4>Broj mobitela: <h6 id="brmob"></h6></h4>
-                <h4>Email: <h6 id="email"></h6></h4>
+            <div class="col text-center" ng-if="Korisnik.nId == $_SESSION['id']" ng-repeat="Korisnik in Korisnici">
+                <h4>Ime: <h6> {{Korisnik.sIme}}</h6></h4>
+                <h4>Prezime: <h6> {{Korisnik.sPrezime}}</h6></h4>
+                <h4>Država: <h6> {{Korisnik.sDrzava}}</h6></h4>
+                <h4>Grad: <h6> {{Korisnik.sGrad}}</h6></h4>
+                <h4>Broj mobitela: <h6> {{Korisnik.sBroj_Mobitela}}</h6></h4>
+                <h4>Email: <h6> {{Korisnik.sEmail}}</h6></h4>
                 <hr>
                 <h4>Korisničko ime: <br><?=$_SESSION['name']?></h4>
                 <h4><br>Nova lozinka: </h4>
@@ -51,20 +55,3 @@ include '../action/checklogin.php';
     <script src="../js/app.js"></script>
 </body>
 </html>
-<?php
-if (isset($_SESSION['error'])){
-    echo '<script>alert("'.$_SESSION['error'].'")</script>';
-    unset($_SESSION['error']);
-}
-$sQuery = "SELECT ime,prezime,drzava,grad,broj_mobitela,email FROM Korisnici";
-    $oRecord = $oConnection->query($sQuery);
-    while($oRow=$oRecord->fetch(PDO::FETCH_BOTH)){
-        echo '<script>document.getElementById("ime").innerHTML = "'.$oRow["ime"].'";
-        document.getElementById("prezime").innerHTML = "'.$oRow['prezime'].'";
-        document.getElementById("drzava").innerHTML = "'.$oRow['drzava'].'";
-        document.getElementById("grad").innerHTML = "'.$oRow['grad'].'";
-        document.getElementById("brmob").innerHTML = "'.$oRow['broj_mobitela'].'";
-        document.getElementById("email").innerHTML = "'.$oRow['email'].'";
-        </script>';
-    }
-?>
