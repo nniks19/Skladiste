@@ -2,7 +2,7 @@
 include '../classes/izdatnica.php';
 include '../connection.php';
 header('Content-Type: application/json; charset=utf-8');
-$sQuery = "SELECT dokument.Dok_Sifra, dokument.Dok_Tip, dokument.Dok_Datum, (SELECT sum(Iznos) FROM artikl_dokument WHERE artikl_dokument.Dok_Sifra = dokument.Dok_Sifra) as Iznos, (SELECT sum(Kolicina) FROM artikl_dokument WHERE artikl_dokument.Dok_Sifra = dokument.Dok_Sifra) as Kolicina, (SELECT GROUP_CONCAT(artikl_dokument.Artikl_Sifra) FROM artikl_dokument WHERE dokument.Dok_Sifra = artikl_dokument.Dok_Sifra) as Artikl_Sifra FROM Dokument WHERE dokument.Dok_Tip = 'IZD'";
+$sQuery = "SELECT dokument.Dok_Sifra, dokument.Dok_Tip, dokument.Dok_Datum, (SELECT sum(Iznos) FROM artikl_dokument WHERE artikl_dokument.Dok_Sifra = dokument.Dok_Sifra) as Iznos, (SELECT sum(Kolicina) FROM artikl_dokument WHERE artikl_dokument.Dok_Sifra = dokument.Dok_Sifra) as Kolicina, (SELECT GROUP_CONCAT(artikl_dokument.Artikl_Sifra) FROM artikl_dokument WHERE dokument.Dok_Sifra = artikl_dokument.Dok_Sifra) as Artikl_Sifra, Dokument.Dok_Kreirao, korisnici.ime, korisnici.prezime FROM Dokument LEFT JOIN korisnici ON Dokument.Dok_Kreirao = korisnici.id WHERE dokument.Dok_Tip = 'IZD'";
 $oRecord = $oConnection->query($sQuery);
 $arrayIzdatnice = array();
 while($oRow=$oRecord->fetch(PDO::FETCH_BOTH)){
@@ -12,6 +12,7 @@ while($oRow=$oRecord->fetch(PDO::FETCH_BOTH)){
         $oRow['Dok_Datum'],
         $oRow['Kolicina'],
         $oRow['Artikl_Sifra'],
+        array('Korisnik_Id' => $oRow['Dok_Kreirao'], 'Korisnik_Ime' => $oRow['ime'], 'Korisnik_Prezime' =>$oRow['prezime']),
         0,
         $oRow['Iznos'],
         );

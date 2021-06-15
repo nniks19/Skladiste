@@ -44,6 +44,7 @@ include '../action/checklogin.php';
                         <th scope='col'>Šifre artikala</th>
                         <th scope='col'>Iznos ulaz</th>
                         <th scope='col'>Iznos izlaz</th>
+                        <th scope='col'>Dokument kreirao/la</th>
                         <th scope='col'></th>
                     </tr>
                 </thead>
@@ -56,6 +57,7 @@ include '../action/checklogin.php';
                         <td>{{Izdatnica._Artikli}}</td>
                         <td>{{Izdatnica.dIznosUlaz}}</td>
                         <td>{{Izdatnica.dIznosIzlaz}}</td>
+                        <td>{{Izdatnica.oKorisnik.Korisnik_Ime}} {{Izdatnica.oKorisnik.Korisnik_Prezime}}</td>
                         <td><button type="button" ng-click="deleteData(Izdatnica.sSifraDokumenta)"
                                 class="btn btn-danger">Obriši</button></td>
                     </tr>

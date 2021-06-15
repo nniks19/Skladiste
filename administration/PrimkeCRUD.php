@@ -44,6 +44,7 @@ include '../action/checklogin.php';
                         <th scope='col'>Šifre artikala</th>
                         <th scope='col'>Iznos ulaz</th>
                         <th scope='col'>Iznos izlaz</th>
+                        <th scope='col'>Dokument kreirao/la</th>
                         <th scope='col'></th>
                     </tr>
                 </thead>
@@ -56,6 +57,7 @@ include '../action/checklogin.php';
                         <td>{{Primka._Artikli}}</td>
                         <td>{{Primka.dIznosUlaz}}</td>
                         <td>{{Primka.dIznosIzlaz}}</td>
+                        <td>{{Primka.oKorisnik.Korisnik_Ime}} {{Primka.oKorisnik.Korisnik_Prezime}}</td>
                         <td><button type="button" ng-click="deleteData(Primka.sSifraDokumenta)"
                                 class="btn btn-danger">Obriši</button></td>
                     </tr>
