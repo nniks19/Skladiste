@@ -30,7 +30,6 @@
 			}
 		}
 		public function setDatumDokumenta($DatumDokumenta){
-			// add check if this is date -> in future
 			$this->dDatumDokumenta = $DatumDokumenta;
 		}
 

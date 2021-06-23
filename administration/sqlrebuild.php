@@ -28,6 +28,7 @@ CREATE TABLE Korisnici (
     drzava varchar(255),
     grad varchar(255),
     broj_mobitela varchar(255),
+    datum_kreiranja timestamp,
     CONSTRAINT PK_Korisnici PRIMARY KEY (id)
 );
 CREATE TABLE Dokument (
@@ -46,7 +47,7 @@ CREATE TABLE Artikl_Dokument (
     CONSTRAINT FK_Artikl FOREIGN KEY(Artikl_Sifra) REFERENCES Artikl(Sifra) ON DELETE CASCADE,
     CONSTRAINT FK_Dokument FOREIGN KEY(Dok_Sifra) REFERENCES Dokument(Dok_Sifra) ON DELETE CASCADE
 );
-INSERT INTO Korisnici (korisnicko_ime, lozinka, email, ime, prezime, drzava, grad, broj_mobitela) VALUES ('nikolastjepanovic', '$hashed_password' , 'nikola.stjepanovic@vuv.hr', 'Nikola', 'Stjepanović', 'Hrvatska', 'Suhopolje', '+385993518898');
+INSERT INTO Korisnici (korisnicko_ime, lozinka, email, ime, prezime, drzava, grad, broj_mobitela, datum_kreiranja) VALUES ('nikolastjepanovic', '$hashed_password' , 'nikola.stjepanovic@vuv.hr', 'Nikola', 'Stjepanović', 'Hrvatska', 'Suhopolje', '+385993518898', current_timestamp);
 INSERT INTO Kategorija (Kategorija_Naziv) VALUES ('BETONSKI I PROTUPOTRESNI BLOKOVI');
 INSERT INTO Kategorija (Kategorija_Naziv) VALUES ('BITUMENSKE LJEPENKE ZA HIDROIZOLACIJU');
 INSERT INTO Kategorija (Kategorija_Naziv) VALUES('CEMENT I VAPNO');

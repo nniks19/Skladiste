@@ -466,12 +466,47 @@ appCRUD.controller('primkeCRUD', function($scope, $http){
 });
 //profil.php
 appCRUD.controller('profilController', function($scope, $http){
-	$http({
-		method:'get',
-		url: '../action/fetch_korisnik.php'
-	}).then(function successCallback(response){
-		$scope.Korisnici = response.data;
-	});
+	$scope.dohvatiInfo = function(){
+		$http({
+			method:'get',
+			url: '../action/fetch_korisnik.php'
+		}).then(function successCallback(response){
+			$scope.Korisnici = response.data;
+		});
+	}
+	$scope.fetchPodatak = function(podatak, naslov){
+		$scope.Korisnik_Podatak = podatak;
+		$scope.modalNaslov = naslov;
+		$scope.submit_button = 'UREDI';
+		$scope.openModal();
+	}
+	$scope.openModal = function(){
+		var modal_popup = angular.element('#crudmodal');
+		$scope.dohvatiInfo();
+		modal_popup.modal('show');
+	};
+
+	$scope.closeModal = function(){
+		var modal_popup = angular.element('#crudmodal');
+		modal_popup.modal('hide');
+	};
+	$scope.submitForm = function(){
+		$http({
+			method:"POST",
+			url:"../action/korisnik.php",
+			data:{'Korisnik_Podatak': $scope.Korisnik_Podatak, 'Korisnik_TipPodatka': $scope.modalNaslov}
+		}).then(function(response){
+			console.log(response);
+			if (response.data.error){
+				alert(response.data.error);
+			}
+			if (response.data.message){
+				alert(response.data.message);
+				$scope.dohvatiInfo();
+				$scope.closeModal();
+			}
+		});
+	};
 });
 //dashboard.php
 appCRUD.controller('dashboardController', function($scope, $http){

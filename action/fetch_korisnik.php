@@ -14,7 +14,8 @@ $sQuery = "SELECT * FROM Korisnici;";
             $oRow['prezime'],
             $oRow['drzava'],
             $oRow['grad'],
-            $oRow['broj_mobitela']
+            $oRow['broj_mobitela'],
+            $oRow['datum_kreiranja']
         );
         array_push($arrayKorisnici, $oKorisnik);
     }
