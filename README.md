@@ -27,28 +27,5 @@ Informacijski sustav mora imati slijedeće funkcionalnosti:
 
 4 – Pregled dokumenata – dodati mogućnost brisanja dokumenata, stanje se mora ažurirati automatski.
 
-Klasa Artikl
 
 
-TO DO LIST:
-
-Backup - spremanje podataka u .txt datoteku koja će sadržavati komandu za rekreiranje baze podataka + dodavanje svih podataka ponovno u bazu
-
-Login - Tablica koja sadržava podatke: Korisničko_Ime, Lozinka, Tajni_Kljuc || Dodati sustav za hash lozinke (zbog sigurnosti)
-
-Zaboravili ste lozinku? - Korisnik će moći vratiti svoju lozinku putem tajnog ključa kojeg je upisao prilikom registracije.
-
-SQL naredba za insert podataka u bazu preko forme - IZDATNICA (natuknica: koristit ću POST, a ne GET):
-Tip dokumenta – IZD (izdatnica):
-Datum dokumenta – automatski:
-Iznos ulaz - 0:
-Iznos izlaz (ukupno prema artiklima) :
-
-SQL naredba za insert podataka u bazu preko forme - PRIMKA (natuknica: koristit ću POST, a ne GET):
-Tip dokumenta – PRM (primka):
-Datum dokumenta – automatski:
-Iznos ulaz - (ukupno prema artiklima):
-Iznos izlaz - 0:
-
-
-Nažalost dohvaćanje podataka za ispis ne smijem raditi preko RAW SQL-a, već to moram napraviti koristeći klase i objekte. (naputak mentora)
