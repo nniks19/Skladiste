@@ -517,3 +517,31 @@ appCRUD.controller('dashboardController', function($scope, $http){
 		$scope.Statistika = response.data;
 	});
 });
+appCRUD.controller('backupController', function($scope, $http){
+	$scope.dummyPodaci = function(){
+		$http({
+			method:'get',
+			url: '../action/backup/sqlrebuild.php'
+		}).then(function successCallback(response){
+			alert(response.data);
+		});
+	}
+	$scope.backup = function(req){
+		$http({
+			method:'POST',
+			url: '../action/backup/backup_create.php',
+			data: {'req':req}
+		}).then(function successCallback(response){
+			$scope.download(req + '.txt',response.data);
+		});
+	}
+	$scope.download = function(filename,text){
+		var element = document.createElement('a');
+  		element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+  		element.setAttribute('download', filename);
+  		element.style.display = 'none';
+  		document.body.appendChild(element);
+  		element.click();
+ 		document.body.removeChild(element);
+	}
+});

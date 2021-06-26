@@ -1,0 +1,3 @@
+ALTER TABLE Korisnici AUTO_INCREMENT = 1;
+INSERT INTO Korisnici (korisnicko_ime, lozinka, email, ime, prezime, drzava, grad, broj_mobitela, datum_kreiranja) VALUES ('nikolastjepanovic', '$2y$10$bnZQb04ueNTPHRq1vDwuqe.U0WVmpWIuKAgaZN9RGp7h.bqB.Ve5m', 'nikola.stjepanovic@vuv.hr', 'Nikola', 'Stjepanović', 'Hrvatska','Suhopolje','+385993518898','2021-06-26 16:17:19');
+INSERT INTO Korisnici (korisnicko_ime, lozinka, email, ime, prezime, drzava, grad, broj_mobitela, datum_kreiranja) VALUES ('lukamajcenic', '$2y$10$bnZQb04ueNTPHRq1vDwuqe.U0WVmpWIuKAgaZN9RGp7h.bqB.Ve5m', 'luka.majcenic@vuv.hr', 'Luka', 'Majcenić', 'Hrvatska','Milanovac','+385985326424','2021-06-26 16:17:19');

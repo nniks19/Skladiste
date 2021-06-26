@@ -1,0 +1,92 @@
+INSERT INTO Artikl (Sifra, Naziv, Opis, Jed_Mj, Cijena, Kategorija_Id, URL) VALUES ('AR1', 'Betonski blok 39x19x14 cm', 'Betonski blokovi namijenjeni su zidanju, izrađeni su od drobljenog kamena i cementa tehnikom vibracija i prešanja.
+
+Karakteristike: 
+
+visoka čvrstoća i stabilnost
+postojanost
+brza ugradnja', 'kom', 5.61, 1, 'https://www.ikoma.hr/content/product/image/m/blok-betonski.jpg');
+INSERT INTO Artikl (Sifra, Naziv, Opis, Jed_Mj, Cijena, Kategorija_Id, URL) VALUES ('AR10', 'Čepasta folija 1 x 20 m (20 m2)', 'Čepasta folija dimenzija 1 x 20 m', 'kom', 7.95, 2, 'https://www.ikoma.hr/content/product/image/m/cepasta.jpg');
+INSERT INTO Artikl (Sifra, Naziv, Opis, Jed_Mj, Cijena, Kategorija_Id, URL) VALUES ('AR11', 'Čepasta folija 1,5 x 20 m (30 m2)', 'Čepasta folija dimenzija 1.5 x 20 m', 'kom', 7.95, 2, 'https://www.ikoma.hr/content/product/image/m/cepasta.jpg');
+INSERT INTO Artikl (Sifra, Naziv, Opis, Jed_Mj, Cijena, Kategorija_Id, URL) VALUES ('AR12', 'Čepasta folija 2 x 20 m (40 m2)', 'Čepasta folija dimenzija 2 x 20 m', 'kom', 7.95, 2, 'https://www.ikoma.hr/content/product/image/m/cepasta.jpg');
+INSERT INTO Artikl (Sifra, Naziv, Opis, Jed_Mj, Cijena, Kategorija_Id, URL) VALUES ('AR13', 'Čepasta folija 2.5 x 20 m (50 m2)', 'Čepasta folija dimenzija 2.5 x 20 m', 'kom', 7.95, 2, 'https://www.ikoma.hr/content/product/image/m/cepasta.jpg');
+INSERT INTO Artikl (Sifra, Naziv, Opis, Jed_Mj, Cijena, Kategorija_Id, URL) VALUES ('AR14', 'Cement 42,5 - 25 kg, BEREMEND', 'Cement od 25 kg - BEREMEND', 'kom', 0.89, 3, 'https://www.ikoma.hr/Content/product/image/m/cement-beremend-425.jpg');
+INSERT INTO Artikl (Sifra, Naziv, Opis, Jed_Mj, Cijena, Kategorija_Id, URL) VALUES ('AR15', 'Cement 42,5 - 25 kg, Dalmacijacement ULTIMO', 'Dalmacijacement ULTIMO – cement vrhunskih performansi za najveće zahtjeve.', 'kom', 0.99, 3, 'https://www.ikoma.hr/Content/product/image/m/dalmacijacement-ultimo.jpg');
+INSERT INTO Artikl (Sifra, Naziv, Opis, Jed_Mj, Cijena, Kategorija_Id, URL) VALUES ('AR16', 'Vapno hidratizirano 25 kg', 'Hidratizirano vapno u vrećama od 25 kg. Upotreba: za izradu mortova i žbuka.', 'kom', 0.87, 3, 'https://www.ikoma.hr/Content/product/image/m/vapno-sirac.jpg');
+INSERT INTO Artikl (Sifra, Naziv, Opis, Jed_Mj, Cijena, Kategorija_Id, URL) VALUES ('AR17', 'Čistač pur pjene 500 ml - WÜRTH EXtraMont', 'Sredstvo za čišćenje pištolja za PUR pjenu - bezbojna tekućina na bazi organskih otapala.', 'kom', 39.83, 4, 'https://www.ikoma.hr/Content/product/image/m/k8921225a-2.jpg');
+INSERT INTO Artikl (Sifra, Naziv, Opis, Jed_Mj, Cijena, Kategorija_Id, URL) VALUES ('AR18', 'Pištolj za pur pjenu 400 g - CON:P', 'Pištolj za pur pjenu s preciznim regulatorom za savršen posao.', 'kom', 104.55, 4, 'https://www.ikoma.hr/Content/product/image/m/cb27430.jpg');
+INSERT INTO Artikl (Sifra, Naziv, Opis, Jed_Mj, Cijena, Kategorija_Id, URL) VALUES ('AR2', 'Betonski blok 39x19x19 cm', 'Betonski blokovi namijenjeni su zidanju, izrađeni su od drobljenog kamena i cementa tehnikom vibracija i prešanja.
+
+Karakteristike: 
+
+visoka čvrstoća i stabilnost
+postojanost
+brza ugradnja', 'kom', 6.78, 1, 'https://www.ikoma.hr/content/product/image/m/blok-betonski.jpg');
+INSERT INTO Artikl (Sifra, Naziv, Opis, Jed_Mj, Cijena, Kategorija_Id, URL) VALUES ('AR3', 'Betonski blok 39x19x24 cm', 'Betonski blokovi namijenjeni su zidanju, izrađeni su od drobljenog kamena i cementa tehnikom vibracija i prešanja.
+
+Karakteristike: 
+
+visoka čvrstoća i stabilnost
+postojanost
+brza ugradnja', 'kom', 7.95, 1, 'https://www.ikoma.hr/content/product/image/m/blok-betonski.jpg');
+INSERT INTO Artikl (Sifra, Naziv, Opis, Jed_Mj, Cijena, Kategorija_Id, URL) VALUES ('AR4', 'Betonski blok 39x19x29 cm', 'Betonski blokovi namijenjeni su zidanju, izrađeni su od drobljenog kamena i cementa tehnikom vibracija i prešanja.
+
+Karakteristike: 
+
+visoka čvrstoća i stabilnost
+postojanost
+brza ugradnja', 'kom', 9.92, 1, 'https://www.ikoma.hr/content/product/image/m/blok-betonski.jpg');
+INSERT INTO Artikl (Sifra, Naziv, Opis, Jed_Mj, Cijena, Kategorija_Id, URL) VALUES ('AR5', 'Betonski blok protupotresni, kutni 20x19x40 cm - crveni', 'Dimenzije:
+
+    dužina: 40 cm
+    visina: 19 cm
+    širina: 20 cm
+    Betonski blokovi namijenjeni su zidanju, izrađeni su od drobljenog kamena i cementa tehnikom vibracija i prešanja.
+    
+    Karakteristike: 
+    
+    visoka čvrstoća i stabilnost
+    postojanost
+    brza ugradnja', 'kom', 9.83, 1, 'https://www.ikoma.hr/Content/product/image/m/betonski-blok-protupotresni-kutni.jpg');
+INSERT INTO Artikl (Sifra, Naziv, Opis, Jed_Mj, Cijena, Kategorija_Id, URL) VALUES ('AR6', 'Betonski blok protupotresni, kutni 25x19x40 cm - crveni', 'Dimenzije:
+
+        dužina: 40 cm
+        visina: 19 cm
+        širina: 20 cm
+        Betonski blokovi namijenjeni su zidanju, izrađeni su od drobljenog kamena i cementa tehnikom vibracija i prešanja.
+        
+        Karakteristike: 
+        
+        visoka čvrstoća i stabilnost
+        postojanost
+        brza ugradnja', 'kom', 10.40, 1, 'https://www.ikoma.hr/Content/product/image/m/betonski-blok-protupotresni-kutni.jpg');
+INSERT INTO Artikl (Sifra, Naziv, Opis, Jed_Mj, Cijena, Kategorija_Id, URL) VALUES ('AR7', 'Betonski blok protupotresni, kutni 25x23.8x38 cm - crveni', 'Dimenzije:
+
+        dužina: 38 cm
+        visina: 23.8 cm
+        širina: 25 cm
+        Betonski blokovi namijenjeni su zidanju, izrađeni su od drobljenog kamena i cementa tehnikom vibracija i prešanja.
+        
+        Karakteristike: 
+        
+        visoka čvrstoća i stabilnost
+        postojanost
+        brza ugradnja', 'kom', 12.64, 1, 'https://www.ikoma.hr/Content/product/image/m/betonski-blok-protupotresni-kutni.jpg');
+INSERT INTO Artikl (Sifra, Naziv, Opis, Jed_Mj, Cijena, Kategorija_Id, URL) VALUES ('AR8', 'Betonski blok protupotresni, kutni 29x19x40 cm - crveni', 'Dimenzije:
+
+            dužina: 40 cm
+            visina: 19 cm
+            širina: 29 cm
+            Betonski blokovi namijenjeni su zidanju, izrađeni su od drobljenog kamena i cementa tehnikom vibracija i prešanja.
+            
+            Karakteristike: 
+            
+            visoka čvrstoća i stabilnost
+            postojanost
+            brza ugradnja', 'kom', 12.72, 1, 'https://www.ikoma.hr/Content/product/image/m/betonski-blok-protupotresni-kutni.jpg');
+INSERT INTO Artikl (Sifra, Naziv, Opis, Jed_Mj, Cijena, Kategorija_Id, URL) VALUES ('AR9', 'Bitumenski temeljni premaz, 10L - SIKA Igoflex P01', 'Bitumenski temeljni premaz, 10 L - SIKA Igoflex P01
+
+Jednokomponentni, brzo stvrdnjavajući bitumenski predpremaz bez otapala.
+
+za poboljšanje prionjivosti bitumenskih premaza i membrana na betonu, žbuki ili zidanim konstrukcijama
+potrošnja ovisi o podlozi i kreće se oko 0,2 l/min
+Proizvođač: Sika - pouzdana, inovativna, održiva i dugotrajna rješenja u građevinskoj i proizvodnoj industriji.', 'kom', 145.02, 2, 'https://www.ikoma.hr/Content/product/image/m/bitumenski-temeljni-premaz-10-l-sika-igoflex-p01.jpg');

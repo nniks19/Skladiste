@@ -1,0 +1,16 @@
+INSERT INTO Artikl_Dokument (Dok_Sifra, Artikl_Sifra, Kolicina, Iznos) VALUES ('2021-1', 'AR1', 100, 561.00);
+INSERT INTO Artikl_Dokument (Dok_Sifra, Artikl_Sifra, Kolicina, Iznos) VALUES ('2021-1', 'AR5', 500, 4915.00);
+INSERT INTO Artikl_Dokument (Dok_Sifra, Artikl_Sifra, Kolicina, Iznos) VALUES ('2021-1', 'AR10', 800, 6360.00);
+INSERT INTO Artikl_Dokument (Dok_Sifra, Artikl_Sifra, Kolicina, Iznos) VALUES ('2021-1', 'AR11', 1250, 9937.50);
+INSERT INTO Artikl_Dokument (Dok_Sifra, Artikl_Sifra, Kolicina, Iznos) VALUES ('2021-2', 'AR2', 1000, 6780.00);
+INSERT INTO Artikl_Dokument (Dok_Sifra, Artikl_Sifra, Kolicina, Iznos) VALUES ('2021-2', 'AR6', 10000, 104000.00);
+INSERT INTO Artikl_Dokument (Dok_Sifra, Artikl_Sifra, Kolicina, Iznos) VALUES ('2021-3', 'AR18', 11000, 1150050.00);
+INSERT INTO Artikl_Dokument (Dok_Sifra, Artikl_Sifra, Kolicina, Iznos) VALUES ('2021-4', 'AR10', 1000, 7950.00);
+INSERT INTO Artikl_Dokument (Dok_Sifra, Artikl_Sifra, Kolicina, Iznos) VALUES ('2021-4', 'AR11', 1000, 7950.00);
+INSERT INTO Artikl_Dokument (Dok_Sifra, Artikl_Sifra, Kolicina, Iznos) VALUES ('2021-4', 'AR12', 1000, 7950.00);
+INSERT INTO Artikl_Dokument (Dok_Sifra, Artikl_Sifra, Kolicina, Iznos) VALUES ('2021-4', 'AR13', 1000, 7950.00);
+INSERT INTO Artikl_Dokument (Dok_Sifra, Artikl_Sifra, Kolicina, Iznos) VALUES ('2021-4', 'AR14', 1000, 890.00);
+INSERT INTO Artikl_Dokument (Dok_Sifra, Artikl_Sifra, Kolicina, Iznos) VALUES ('2021-4', 'AR15', 85000, 84150.00);
+INSERT INTO Artikl_Dokument (Dok_Sifra, Artikl_Sifra, Kolicina, Iznos) VALUES ('2021-5', 'AR4', 18579, 184303.68);
+INSERT INTO Artikl_Dokument (Dok_Sifra, Artikl_Sifra, Kolicina, Iznos) VALUES ('2021-6', 'AR18', 1000, 104550.00);
+INSERT INTO Artikl_Dokument (Dok_Sifra, Artikl_Sifra, Kolicina, Iznos) VALUES ('2021-6', 'AR4', 1000, 9920.00);

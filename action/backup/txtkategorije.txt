@@ -1,0 +1,5 @@
+ALTER TABLE Kategorija AUTO_INCREMENT = 1;
+INSERT INTO Kategorija (Kategorija_Naziv) VALUES ('BETONSKI I PROTUPOTRESNI BLOKOVI'); 
+INSERT INTO Kategorija (Kategorija_Naziv) VALUES ('BITUMENSKE LJEPENKE ZA HIDROIZOLACIJU'); 
+INSERT INTO Kategorija (Kategorija_Naziv) VALUES ('CEMENT I VAPNO'); 
+INSERT INTO Kategorija (Kategorija_Naziv) VALUES ('PUR PJENE'); 

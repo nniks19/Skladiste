@@ -1,0 +1,6 @@
+INSERT INTO Dokument (Dok_Sifra, Dok_Tip, Dok_Datum, Dok_Kreirao) VALUES ('2021-1', 'PRM', '2021-05-17 11:46:27', 1);
+INSERT INTO Dokument (Dok_Sifra, Dok_Tip, Dok_Datum, Dok_Kreirao) VALUES ('2021-2', 'PRM', '2021-05-17 12:30:00', 1);
+INSERT INTO Dokument (Dok_Sifra, Dok_Tip, Dok_Datum, Dok_Kreirao) VALUES ('2021-3', 'PRM', '2021-05-17 13:00:00', 1);
+INSERT INTO Dokument (Dok_Sifra, Dok_Tip, Dok_Datum, Dok_Kreirao) VALUES ('2021-4', 'PRM', '2021-05-17 13:30:15', 1);
+INSERT INTO Dokument (Dok_Sifra, Dok_Tip, Dok_Datum, Dok_Kreirao) VALUES ('2021-5', 'PRM', '2021-05-17 14:00:25', 1);
+INSERT INTO Dokument (Dok_Sifra, Dok_Tip, Dok_Datum, Dok_Kreirao) VALUES ('2021-6', 'IZD', '2021-05-17 14:03:25', 1);
