@@ -27,3 +27,6 @@ Stvari koje sam ja napravio a nisu bile obavezne:
  - Statistiku na dashboard.php
  - Backup (sigurnosnu kopiju) - Spremanje SQL INSERT komandi za trenutne podatake u .txt datoteku koja se automatski preuzima pritiskom na dugme
  - Vraćanje podataka na početno stanje (sa "dummy" podacima)
+ - Modal koji prikazuje detaljnije informacije o artiklu
+ - Modal koji prikazuje detaljne informacije o dokumentu
+ - Mogučnost printanja dokumenta
