@@ -45,6 +45,7 @@ include '../action/checklogin.php';
                         <th scope='col'>Iznos ulaz</th>
                         <th scope='col'>Iznos izlaz</th>
                         <th scope='col'>Dokument kreirao/la</th>
+                        <th scope='col'>Pregled</th>
                         <th scope='col'></th>
                     </tr>
                 </thead>
@@ -58,6 +59,15 @@ include '../action/checklogin.php';
                         <td>{{Primka.dIznosUlaz}}</td>
                         <td>{{Primka.dIznosIzlaz}}</td>
                         <td>{{Primka.oKorisnik.Korisnik_Ime}} {{Primka.oKorisnik.Korisnik_Prezime}}</td>
+                        <td ng-click="openModalPregled(Primka.sSifraDokumenta, Primka.dDatumDokumenta, Primka.dIznosIzlaz, Primka.oKorisnik.Korisnik_Ime, Primka.oKorisnik.Korisnik_Prezime)"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-zoom-in" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
+                                <path
+                                    d="M10.344 11.742c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1 6.538 6.538 0 0 1-1.398 1.4z" />
+                                <path fill-rule="evenodd"
+                                    d="M6.5 3a.5.5 0 0 1 .5.5V6h2.5a.5.5 0 0 1 0 1H7v2.5a.5.5 0 0 1-1 0V7H3.5a.5.5 0 0 1 0-1H6V3.5a.5.5 0 0 1 .5-.5z" />
+                            </svg></td>
                         <td><button type="button" ng-click="deleteData(Primka.sSifraDokumenta)"
                                 class="btn btn-danger">Obriši</button></td>
                     </tr>
@@ -67,6 +77,39 @@ include '../action/checklogin.php';
     </div>
     </div>
     <script src="../js/app.js"></script>
+    <div class="modal fade" tabindex="-1" id="pregledmodal">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title d-print-none">Prikaz primke</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Zatvori"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <h3>Izdao: <h5>{{ime}} {{prezime}}</h5></h3>
+                    <h3>Sifra dokumenta: <h5>{{sifradok}}</h5><h3>
+                    <h3>Tip dokumenta: <h5>Primka</h5></h3>
+                    <h3>Datum izdavanja dokumenta: <h5>{{datumdok}}</h5></h3>
+                    <h3>Ukupan iznos (ulaz): <h5>{{dokiznosulaz}} kn</h5></h3>
+                    <h3>Ukupan iznos (izlaz): <h5>{{dokiznosizlaz}} kn</h5></h3>
+                    <h3>Artikli:</h3>
+                    <hr>
+                    <div class="row">
+                        <div ng-repeat="Artik in dArtikli" class="col">
+                            <h5>Sifra artikla: {{Artik.Artikl_Sifra}}</h5>
+                            <h5>Naziv artikla: {{Artik.Naziv}}</h5>
+                            <h5>Kolicina artikla: {{Artik.Kolicina}}</h5>
+                            <h5>Iznos artikla: {{Artik.Iznos}} kn</h5>
+                        </div>
+                    </div>
+                <div class="modal-footer">
+                    <input type="hidden" name="hidden_id" value="{{hidden_id}}" />
+                    <button type="button" class="btn btn-secondary d-print-none" data-bs-dismiss="modal">{{Zatvori}}</button>
+                    <button type="button" class="btn btn-primary d-print-none" ng-click="printaj()">{{Printaj}}</button>
+                </div>
+                </div>
+        </div>
+    </div>
+</div>
 </body>
 
 </html>

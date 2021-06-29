@@ -1,7 +1,6 @@
 //prije panela modul skladiste-app
 
 var oSkladisteModul = angular.module('skladiste-app', ['datatables']);
-
 oSkladisteModul.controller('listaArtikala', ['$scope', '$http', function ($scope, $http){
 	$http({
 		method:'get',
@@ -9,6 +8,20 @@ oSkladisteModul.controller('listaArtikala', ['$scope', '$http', function ($scope
 	}).then(function successCallback(response){
 		$scope.Artikli = response.data;
 	});
+	$scope.openModal = function(sifra,naziv, jedmj, cijena, slika){
+		var modal_popup = angular.element('#artiklmodal');
+		$scope.sifraartikla=sifra;
+		$scope.nazivartikla=naziv;
+		$scope.jedmjartikla= jedmj;
+		$scope.cijenaartikla= cijena;
+		$scope.urlartikla = slika;
+		modal_popup.modal('show');
+	};
+
+	$scope.closeModal = function(){
+		var modal_popup = angular.element('#artiklmodal');
+		modal_popup.modal('hide');
+	};
 }]);
 
 //direktive modula skladiste-app
@@ -273,7 +286,31 @@ appCRUD.controller('izdatniceCRUD', function($scope, $http){
 		// kada se odabere neki artikl ovo se izvršava
 		$scope.fetchSingleArtikl();
 	}
+	$scope.openModalPregled = function(sifradok, datumdok, dokiznosizlaz, ime, prezime){
+		var modal_popup = angular.element('#pregledmodal');
+		$scope.Zatvori = "Zatvori";
+		$scope.Printaj = "Printaj";
+		$scope.ShowClose=true;
+		$scope.ShowPrint =
+		$scope.sifradok = sifradok;
+		$scope.datumdok = datumdok;
+		$scope.dokiznosulaz = 0;
+		$scope.dokiznosizlaz = dokiznosizlaz;
+		$scope.ime = ime;
+		$scope.prezime = prezime;
+		$http({
+			method:'POST',
+			url: '../action/izdatnica.php',
+			data: {action: "Detalji", sifradok: sifradok}
+		}). then(function successCallback(response){
+			$scope.dArtikli = response.data;
+		});
+		modal_popup.modal('show');
+	};
+	$scope.printaj= function(){
+		window.print(); 
 
+	}
 	$scope.openModal = function(){
 		var modal_popup = angular.element('#crudmodal');
 		$scope.dohvatiArtikle();
@@ -285,7 +322,7 @@ appCRUD.controller('izdatniceCRUD', function($scope, $http){
 		var modal_popup = angular.element('#crudmodal');
 		modal_popup.modal('hide');
 	};
-
+	
 	$scope.addData = function(){
 		$scope.modalNaslov = 'Kreiraj dokument';
 		$scope.submit_button = 'DODAJ';
@@ -381,7 +418,31 @@ appCRUD.controller('primkeCRUD', function($scope, $http){
 		// kada se odabere neki artikl ovo se izvršava
 		$scope.fetchSingleArtikl();
 	}
+	$scope.openModalPregled = function(sifradok, datumdok, dokiznosizlaz, ime, prezime){
+		var modal_popup = angular.element('#pregledmodal');
+		$scope.Zatvori = "Zatvori";
+		$scope.Printaj = "Printaj";
+		$scope.ShowClose=true;
+		$scope.ShowPrint =
+		$scope.sifradok = sifradok;
+		$scope.datumdok = datumdok;
+		$scope.dokiznosulaz = 0;
+		$scope.dokiznosizlaz = dokiznosizlaz;
+		$scope.ime = ime;
+		$scope.prezime = prezime;
+		$http({
+			method:'POST',
+			url: '../action/primka.php',
+			data: {action: "Detalji", sifradok: sifradok}
+		}). then(function successCallback(response){
+			$scope.dArtikli = response.data;
+		});
+		modal_popup.modal('show');
+	};
+	$scope.printaj= function(){
+		window.print(); 
 
+	}
 	$scope.setKolicina = function(thisAr){
 		for (var i=0;i<$scope.OdabraniArtikli.length;i++){
 			if ($scope.OdabraniArtikli[i].SifraArtikla == thisAr.$$watchers[0].last){
@@ -517,6 +578,7 @@ appCRUD.controller('dashboardController', function($scope, $http){
 		$scope.Statistika = response.data;
 	});
 });
+//backup.php
 appCRUD.controller('backupController', function($scope, $http){
 	$scope.dummyPodaci = function(){
 		$http({

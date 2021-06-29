@@ -86,7 +86,27 @@ elseif($form_data->action == 'DODAJ'){
 	{
 		$validation_error = implode(", ", $error);
 	}	
+}elseif($form_data->action == 'Detalji'){
+    $data = array(
+        ':DokSifra' =>$form_data->sifradok
+    );
+    $query = 'SELECT Artikl_Sifra, Dok_Sifra, Kolicina, Iznos, Artikl.Naziv FROM artikl_dokument INNER JOIN Artikl ON artikl_dokument.Artikl_Sifra = Artikl.Sifra WHERE artikl_dokument.Dok_Sifra = :DokSifra';
+    $statement = $oConnection->prepare($query);
+    $statement->execute($data);
+    $result = $statement->fetchAll();
+    $output = [];
+	foreach($result as $row)
+	{
+        $Artikl = array(
+        'Artikl_Sifra' =>$row['Artikl_Sifra'],
+        'Kolicina' =>$row['Kolicina'],
+        'Iznos'=>$row['Iznos'],
+        'Naziv'=>$row['Naziv']
+        );
+        array_push($output, $Artikl);
+	}
 }
+
 
 
 echo json_encode($output);
