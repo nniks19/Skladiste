@@ -59,7 +59,7 @@ include '../action/checklogin.php';
                         <td>{{Primka.dIznosUlaz}}</td>
                         <td>{{Primka.dIznosIzlaz}}</td>
                         <td>{{Primka.oKorisnik.Korisnik_Ime}} {{Primka.oKorisnik.Korisnik_Prezime}}</td>
-                        <td ng-click="openModalPregled(Primka.sSifraDokumenta, Primka.dDatumDokumenta, Primka.dIznosIzlaz, Primka.oKorisnik.Korisnik_Ime, Primka.oKorisnik.Korisnik_Prezime)"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        <td ng-click="openModalPregled(Primka.sSifraDokumenta, Primka.dDatumDokumenta, Primka.dIznosUlaz, Primka.oKorisnik.Korisnik_Ime, Primka.oKorisnik.Korisnik_Prezime)"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                 class="bi bi-zoom-in" viewBox="0 0 16 16">
                                 <path fill-rule="evenodd"
                                     d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />

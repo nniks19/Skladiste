@@ -77,6 +77,11 @@ elseif($form_data->action == 'DODAJ'){
 	{
 		$output['error'] = 'Cijena nije u dobrom formatu.';
 	}
+	if(!empty($form_data->Artikl_Cijena) && is_numeric($form_data->Artikl_Cijena)){
+		if ($form_data->Artikl_Cijena <= 0){
+			$output['error'] = 'Cijena mora biti veća od 0';
+		}
+	}
 	if(empty($form_data->Artikl_Kategorija)){
 		$output['error'] = 'Obavezan je odabir kategorije.';
 	}
@@ -130,6 +135,11 @@ elseif($form_data->action == 'DODAJ'){
 	if(empty($form_data->Artikl_Cijena) || !is_numeric($form_data->Artikl_Cijena))
 	{
 		$output['error'] = 'Cijena nije u dobrom formatu.';
+	}
+	if(!empty($form_data->Artikl_Cijena) && is_numeric($form_data->Artikl_Cijena)){
+		if ($form_data->Artikl_Cijena <= 0){
+			$output['error'] = 'Cijena mora biti veća od 0';
+		}
 	}
 	if(empty($form_data->Artikl_Kategorija)){
 		$output['error'] = 'Obavezan je odabir kategorije.';

@@ -21,12 +21,12 @@ Informacijski sustav mora imati slijedeće funkcionalnosti:
 4 – Pregled dokumenata – dodati mogućnost brisanja dokumenata, stanje se mora ažurirati automatski.
 
 Stvari koje sam ja napravio a nisu bile obavezne:
- - Prijava korisnika
+ - Registracija i prijava korisnika
  - Brisanje artikala, dokumenata, kategorija
- - Uređivanje artikala, kategorija, dokumenata
- - Statistiku na dashboard.php
+ - Uređivanje artikala, kategorija, profila
+ - Statistika na dashboard.php
  - Backup (sigurnosnu kopiju) - Spremanje SQL INSERT komandi za trenutne podatake u .txt datoteku koja se automatski preuzima pritiskom na dugme
- - Vraćanje podataka na početno stanje (sa "dummy" podacima)
- - Modal koji prikazuje detaljnije informacije o artiklu
- - Modal koji prikazuje detaljne informacije o dokumentu
- - Mogučnost printanja dokumenta
+ - Vraćanje podataka na početno stanje (sa početnim podacima)
+ - Informacije o artiklu (unutar modala)
+ - Informacije o dokumentu (unutar modala) i printanje dokumenta
+ 

@@ -58,7 +58,7 @@ include '../action/checklogin.php';
                         <td>{{Artikl.sArtikl_URL}}</td>
                         <td id="{{Artikl.sArtikl_Kategorija.nIdKategorije}}">
                             {{Artikl.sArtikl_Kategorija.sNazivKategorije}}</td>
-                        <td><button type="button" ng-click="fetchSingleData(Artikl.sArtikl_Sifra)"
+                        <td><button type="button" ng-click="fetchSingleData(Artikl.sArtikl_Sifra, Artikl.sArtikl_Kategorija.nIdKategorije)"
                                 class="btn btn-light">Uredi</button></td>
                         <td><button type="button" ng-click="deleteData(Artikl.sArtikl_Sifra)"
                                 class="btn btn-danger">Obriši</button></td>

@@ -23,6 +23,23 @@ oSkladisteModul.controller('listaArtikala', ['$scope', '$http', function ($scope
 		modal_popup.modal('hide');
 	};
 }]);
+oSkladisteModul.controller('registerController', ['$scope', '$http', function ($scope, $http){
+	$scope.Registriraj = function(){
+		$http({
+		method:'POST',
+		url: 'action/register.php',
+		data: {'username': $scope.username, 'password': $scope.password, 'email': $scope.email, 'ime' : $scope.ime, 'prezime': $scope.prezime, 'drzava': $scope.drzava, 'grad': $scope.grad, 'brojmobitela': $scope.brojmobitela}
+		}).then(function(response){
+			if (response.data.error){
+				alert(response.data.error);
+			}
+			if (response.data.message){
+				alert(response.data.message);
+				window.location.href = "prijava.php";
+			}
+		});
+	}
+}]);
 
 //direktive modula skladiste-app
 
@@ -43,8 +60,16 @@ oSkladisteModul.directive("footercopy",
 oSkladisteModul.directive("login",
 	function(){
 		return{
-			retrist: "E",
+			restrict: "E",
 			templateUrl: "templates/login.html"
+		}
+	}
+)
+oSkladisteModul.directive("register",
+	function(){
+		return{
+			restrict:"E",
+			templateUrl: "templates/register.html"
 		}
 	}
 )
@@ -198,7 +223,6 @@ appCRUD.controller('artikliCRUD', function($scope, $http){
 			url:"../action/artikl.php",
 			data:{'Artikl_Sifra': $scope.hidden_id, 'Artikl_Naziv':$scope.Artikl_Naziv, 'Artikl_Opis': $scope.Artikl_Opis, 'Artikl_JedMj': $scope.Artikl_JedMj, 'Artikl_Cijena': $scope.Artikl_Cijena, 'Artikl_URL': $scope.Artikl_URL, 'Artikl_Kategorija': $scope.Artikl_Kategorija, 'action':$scope.submit_button, 'id':$scope.hidden_id}
 		}).then(function(response){
-			console.log(response);
 			if (response.data.error){
 				alert(response.data.error);
 			}
@@ -210,7 +234,7 @@ appCRUD.controller('artikliCRUD', function($scope, $http){
 		});
 	};
 
-	$scope.fetchSingleData = function(id){
+	$scope.fetchSingleData = function(id, katid){
 		$http({
 			method:"POST",
 			url:"../action/artikl.php",
@@ -223,7 +247,7 @@ appCRUD.controller('artikliCRUD', function($scope, $http){
 			$scope.Artikl_Cijena = data.data[0].dArtikl_Cijena;
 			$scope.Artikl_URL = data.data[0].sArtikl_URL;
 			$scope.hidden_id = id;
-			$scope.Artikl_Kategorija = data.data[0].sArtikl_Kategorija.nArtikl_KategorijaId;
+			$scope.Artikl_Kategorija = katid;
 			$scope.modalNaslov = 'Uredi podatke';
 			$scope.submit_button = 'UREDI';
 			$scope.openModal();
@@ -418,7 +442,7 @@ appCRUD.controller('primkeCRUD', function($scope, $http){
 		// kada se odabere neki artikl ovo se izvršava
 		$scope.fetchSingleArtikl();
 	}
-	$scope.openModalPregled = function(sifradok, datumdok, dokiznosizlaz, ime, prezime){
+	$scope.openModalPregled = function(sifradok, datumdok, dokiznosulaz, ime, prezime){
 		var modal_popup = angular.element('#pregledmodal');
 		$scope.Zatvori = "Zatvori";
 		$scope.Printaj = "Printaj";
@@ -426,8 +450,8 @@ appCRUD.controller('primkeCRUD', function($scope, $http){
 		$scope.ShowPrint =
 		$scope.sifradok = sifradok;
 		$scope.datumdok = datumdok;
-		$scope.dokiznosulaz = 0;
-		$scope.dokiznosizlaz = dokiznosizlaz;
+		$scope.dokiznosizlaz = 0;
+		$scope.dokiznosulaz = dokiznosulaz;
 		$scope.ime = ime;
 		$scope.prezime = prezime;
 		$http({
@@ -557,7 +581,6 @@ appCRUD.controller('profilController', function($scope, $http){
 			url:"../action/korisnik.php",
 			data:{'Korisnik_Podatak': $scope.Korisnik_Podatak, 'Korisnik_TipPodatka': $scope.modalNaslov}
 		}).then(function(response){
-			console.log(response);
 			if (response.data.error){
 				alert(response.data.error);
 			}

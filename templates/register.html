@@ -1,0 +1,41 @@
+<main class="form-register">
+    <form method="post" id="authform">
+      <h1 class="h3 mb-3 fw-normal">Registracija</h1>
+      <div class="form-floating">
+        <input type="text" name="username" ng-model="username" class="form-control" id="floatingInput" placeholder="Korisničko ime">
+        <label for="floatingInput">Korisničko ime</label>
+      </div>
+      <div class="form-floating">
+        <input type="password" name="password" ng-model="password" class="form-control" id="floatingPassword" placeholder="Lozinka">
+        <label for="floatingPassword">Lozinka</label>
+      </div>
+      <div class="form-floating">
+        <input type="email" name="email" ng-model="email" class="form-control" id="floatingEmail" placeholder="Email">
+        <label for="floatingEmail">Email</label>
+      </div>
+      <div class="form-floating">
+        <input type="ime" name="ime" ng-model="ime" class="form-control" id="floatingIme" placeholder="Ime">
+        <label for="floatingIme">Ime</label>
+      </div>
+      <div class="form-floating">
+        <input type="prezime" name="prezime" ng-model="prezime" class="form-control" id="floatingPrezime" placeholder="Prezime">
+        <label for="floatingPrezime">Prezime</label>
+      </div>
+      <div class="form-floating">
+        <input type="drzava" name="drzava" ng-model="drzava" class="form-control" id="floatingDrzava" placeholder="Drzava">
+        <label for="floatingPDrzava">Drzava</label>
+      </div>
+      <div class="form-floating">
+        <input type="grad" name="grad" ng-model="grad" class="form-control" id="floatingGrad" placeholder="Grad">
+        <label for="floatingGrad">Grad</label>
+      </div>
+      <div class="form-floating">
+        <input type="brojmobitela" name="brojmobitela" ng-model="brojmobitela" class="form-control" id="floatingBrojmobitela" placeholder="Brojmobitela">
+        <label for="floatingBrojmobitela">Broj mobitela</label>
+      </div>
+      <button ng-click="Registriraj()" class="w-100 btn btn-lg btn-primary">Registriraj se</button>
+    </form>
+    <p class="black"><br><a href="index.php"><b>Početna</b></a></p>
+    <p class="black"><br><a href="prijava.php"><b>Prijava</b></a></p>
+    <p class="mt-5 mb-3 text-muted">&copy; 2021</p>
+  </main>
