@@ -55,7 +55,7 @@ if (isset($_SESSION['error'])){
                     </h4>
                     <hr>
                     <h4>
-                    <button type="button" ng-click="dummyPodaci()" class="btn btn-danger"><a>Vrati na početne podatke (za razna testiranja)</a></button>
+                    <button type="button" ng-click="dummyPodaci()" class="btn btn-danger"><a>Vrati na početne podatke</a></button>
                     </h4>
                 </div>
             </div>

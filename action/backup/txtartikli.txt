@@ -89,4 +89,4 @@ Jednokomponentni, brzo stvrdnjavajući bitumenski predpremaz bez otapala.
 
 za poboljšanje prionjivosti bitumenskih premaza i membrana na betonu, žbuki ili zidanim konstrukcijama
 potrošnja ovisi o podlozi i kreće se oko 0,2 l/min
-Proizvođač: Sika - pouzdana, inovativna, održiva i dugotrajna rješenja u građevinskoj i proizvodnoj industriji.', 'kom', 145.02, 2, 'https://www.ikoma.hr/Content/product/image/m/bitumenski-temeljni-premaz-10-l-sika-igoflex-p01.jpg');
+Proizvođač: Sika - pouzdana, inovativna, održiva i dugotrajna rješenja u građevinskoj i proizvodnoj industriji.', 'kom', 1.00, 2, 'https://www.ikoma.hr/Content/product/image/m/bitumenski-temeljni-premaz-10-l-sika-igoflex-p01.jpg');

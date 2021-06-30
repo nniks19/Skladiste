@@ -17,7 +17,7 @@ INSERT INTO Artikl (Sifra, Naziv, Opis, Jed_Mj, Cijena, Kategorija_Id, URL) VALU
 INSERT INTO Artikl (Sifra, Naziv, Opis, Jed_Mj, Cijena, Kategorija_Id, URL) VALUES ('AR14', 'Cement 42,5 - 25 kg, BEREMEND', 'Cement od 25 kg - BEREMEND', 'kom', 0.89, 3, 'https://www.ikoma.hr/Content/product/image/m/cement-beremend-425.jpg');
 INSERT INTO Artikl (Sifra, Naziv, Opis, Jed_Mj, Cijena, Kategorija_Id, URL) VALUES ('AR15', 'Cement 42,5 - 25 kg, Dalmacijacement ULTIMO', 'Dalmacijacement ULTIMO – cement vrhunskih performansi za najveće zahtjeve.', 'kom', 0.99, 3, 'https://www.ikoma.hr/Content/product/image/m/dalmacijacement-ultimo.jpg');
 INSERT INTO Artikl (Sifra, Naziv, Opis, Jed_Mj, Cijena, Kategorija_Id, URL) VALUES ('AR16', 'Vapno hidratizirano 25 kg', 'Hidratizirano vapno u vrećama od 25 kg. Upotreba: za izradu mortova i žbuka.', 'kom', 0.87, 3, 'https://www.ikoma.hr/Content/product/image/m/vapno-sirac.jpg');
-INSERT INTO Artikl (Sifra, Naziv, Opis, Jed_Mj, Cijena, Kategorija_Id, URL) VALUES ('AR17', 'Čistač pur pjene 500 ml - WÜRTH EXtraMont', 'Sredstvo za čišćenje pištolja za PUR pjenu - bezbojna tekućina na bazi organskih otapala.', 'kom', 39.83, 3, 'https://www.ikoma.hr/Content/product/image/m/k8921225a-2.jpg');
+INSERT INTO Artikl (Sifra, Naziv, Opis, Jed_Mj, Cijena, Kategorija_Id, URL) VALUES ('AR17', 'Čistač pur pjene 500 ml - WÜRTH EXtraMont', 'Sredstvo za čišćenje pištolja za PUR pjenu - bezbojna tekućina na bazi organskih otapala.', 'kom', 39.83, 4, 'https://www.ikoma.hr/Content/product/image/m/k8921225a-2.jpg');
 INSERT INTO Artikl (Sifra, Naziv, Opis, Jed_Mj, Cijena, Kategorija_Id, URL) VALUES ('AR18', 'Pištolj za pur pjenu 400 g - CON:P', 'Pištolj za pur pjenu s preciznim regulatorom za savršen posao.', 'kom', 104.55, 4, 'https://www.ikoma.hr/Content/product/image/m/cb27430.jpg');
 INSERT INTO Artikl (Sifra, Naziv, Opis, Jed_Mj, Cijena, Kategorija_Id, URL) VALUES ('AR2', 'Betonski blok 39x19x19 cm', 'Betonski blokovi namijenjeni su zidanju, izrađeni su od drobljenog kamena i cementa tehnikom vibracija i prešanja.
 
@@ -94,17 +94,18 @@ Jednokomponentni, brzo stvrdnjavajući bitumenski predpremaz bez otapala.
 
 za poboljšanje prionjivosti bitumenskih premaza i membrana na betonu, žbuki ili zidanim konstrukcijama
 potrošnja ovisi o podlozi i kreće se oko 0,2 l/min
-Proizvođač: Sika - pouzdana, inovativna, održiva i dugotrajna rješenja u građevinskoj i proizvodnoj industriji.', 'kom', 145.02, 4, 'https://www.ikoma.hr/Content/product/image/m/bitumenski-temeljni-premaz-10-l-sika-igoflex-p01.jpg');
+Proizvođač: Sika - pouzdana, inovativna, održiva i dugotrajna rješenja u građevinskoj i proizvodnoj industriji.', 'kom', 1.00, 2, 'https://www.ikoma.hr/Content/product/image/m/bitumenski-temeljni-premaz-10-l-sika-igoflex-p01.jpg');
 ALTER TABLE Korisnici AUTO_INCREMENT = 1;
-INSERT INTO Korisnici (korisnicko_ime, lozinka, email, ime, prezime, drzava, grad, broj_mobitela, datum_kreiranja) VALUES ('nikolastjepanovic', '$2y$10$9rb8bkJhDs5dqyddL486fO1Es6DX.l70UYDAu2PNEHhWCt61uPaJ2', 'nikola.stjepanovic@vuv.hr', 'Nikola', 'Stjepanović', 'Hrvatska','Suhopolje','+385993518898','2021-06-29 16:23:52');
-INSERT INTO Korisnici (korisnicko_ime, lozinka, email, ime, prezime, drzava, grad, broj_mobitela, datum_kreiranja) VALUES ('lukamajcenic', '$2y$10$9rb8bkJhDs5dqyddL486fO1Es6DX.l70UYDAu2PNEHhWCt61uPaJ2', 'luka.majcenic@vuv.hr', 'Luka', 'Majcenić', 'Hrvatska','Milanovac','+385985326424','2021-06-29 16:10:01');
+INSERT INTO Korisnici (korisnicko_ime, lozinka, email, ime, prezime, drzava, grad, broj_mobitela, datum_kreiranja) VALUES ('nikolastjepanovic', '$2y$10$bvJWsqQnaVC.lbg9IYlKyuBWcuTnVT5fhc9FUAWT/xM6bUrURe6.u', 'nikola.stjepanovic@vuv.hr', 'Nikola', 'Stjepanović', 'Hrvatska','Suhopolje','+385993518898','2021-06-30 19:28:31');
+INSERT INTO Korisnici (korisnicko_ime, lozinka, email, ime, prezime, drzava, grad, broj_mobitela, datum_kreiranja) VALUES ('lukamajcenic', '$2y$10$bvJWsqQnaVC.lbg9IYlKyuBWcuTnVT5fhc9FUAWT/xM6bUrURe6.u', 'luka.majcenic@vuv.hr', 'Luka', 'Majcenić', 'Hrvatska','Milanovac','+385985326424','2021-06-30 14:46:01');
+INSERT INTO Korisnici (korisnicko_ime, lozinka, email, ime, prezime, drzava, grad, broj_mobitela, datum_kreiranja) VALUES ('IvanHorvat', '$2y$10$YcRM.5qvekJFM5Tc0dECoej3ef3gvI392H06rzNfIYoRfuboOFv.y', 'Ivan.Horvat@vuv.hr', 'Ivan', 'Horvat', 'Hrvatska','Suhopolje','+385999351898','2021-06-30 14:46:58');
 INSERT INTO Dokument (Dok_Sifra, Dok_Tip, Dok_Datum, Dok_Kreirao) VALUES ('2021-1', 'PRM', '2021-05-17 11:46:27', 1);
 INSERT INTO Dokument (Dok_Sifra, Dok_Tip, Dok_Datum, Dok_Kreirao) VALUES ('2021-2', 'PRM', '2021-05-17 12:30:00', 1);
 INSERT INTO Dokument (Dok_Sifra, Dok_Tip, Dok_Datum, Dok_Kreirao) VALUES ('2021-3', 'PRM', '2021-05-17 13:00:00', 1);
 INSERT INTO Dokument (Dok_Sifra, Dok_Tip, Dok_Datum, Dok_Kreirao) VALUES ('2021-4', 'PRM', '2021-05-17 13:30:15', 1);
 INSERT INTO Dokument (Dok_Sifra, Dok_Tip, Dok_Datum, Dok_Kreirao) VALUES ('2021-5', 'PRM', '2021-05-17 14:00:25', 1);
 INSERT INTO Dokument (Dok_Sifra, Dok_Tip, Dok_Datum, Dok_Kreirao) VALUES ('2021-6', 'IZD', '2021-05-17 14:03:25', 1);
-INSERT INTO Dokument (Dok_Sifra, Dok_Tip, Dok_Datum, Dok_Kreirao) VALUES ('2021-7', 'IZD', '2021-06-29 16:13:58', 1);
+INSERT INTO Dokument (Dok_Sifra, Dok_Tip, Dok_Datum, Dok_Kreirao) VALUES ('2021-7', 'IZD', '2021-06-30 18:03:10', 1);
 INSERT INTO Artikl_Dokument (Dok_Sifra, Artikl_Sifra, Kolicina, Iznos) VALUES ('2021-1', 'AR1', 100, 561.00);
 INSERT INTO Artikl_Dokument (Dok_Sifra, Artikl_Sifra, Kolicina, Iznos) VALUES ('2021-1', 'AR5', 500, 4915.00);
 INSERT INTO Artikl_Dokument (Dok_Sifra, Artikl_Sifra, Kolicina, Iznos) VALUES ('2021-1', 'AR10', 800, 6360.00);
@@ -121,4 +122,5 @@ INSERT INTO Artikl_Dokument (Dok_Sifra, Artikl_Sifra, Kolicina, Iznos) VALUES ('
 INSERT INTO Artikl_Dokument (Dok_Sifra, Artikl_Sifra, Kolicina, Iznos) VALUES ('2021-5', 'AR4', 18579, 184303.68);
 INSERT INTO Artikl_Dokument (Dok_Sifra, Artikl_Sifra, Kolicina, Iznos) VALUES ('2021-6', 'AR18', 1000, 104550.00);
 INSERT INTO Artikl_Dokument (Dok_Sifra, Artikl_Sifra, Kolicina, Iznos) VALUES ('2021-6', 'AR4', 1000, 9920.00);
-INSERT INTO Artikl_Dokument (Dok_Sifra, Artikl_Sifra, Kolicina, Iznos) VALUES ('2021-7', 'AR1', 15, 84.15);
+INSERT INTO Artikl_Dokument (Dok_Sifra, Artikl_Sifra, Kolicina, Iznos) VALUES ('2021-7', 'AR5', 15, 147.45);
+INSERT INTO Artikl_Dokument (Dok_Sifra, Artikl_Sifra, Kolicina, Iznos) VALUES ('2021-7', 'AR2', 15, 101.70);
